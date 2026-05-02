@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AMTECH - Transforma tus Excel y digitaliza tu negocio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="logoam.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Variables de colores muy vibrantes y efectos */
+        /* Variables de diseño premium */
         :root {
             --primary: #6366f1;
             --secondary: #ec4899;
@@ -18,8 +19,11 @@
             --dark: #0f172a;
             --light: #f8fafc;
             --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
+        /* Estilos base */
         * {
             margin: 0;
             padding: 0;
@@ -32,34 +36,23 @@
             background-color: var(--dark);
             color: var(--light);
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
-        h1 { font-weight: 800; font-size: 4rem; line-height: 1.1; }
-        h2 { font-weight: 700; font-size: 2.5rem; }
-        h3 { font-weight: 600; font-size: 1.8rem; }
-
+        /* Animaciones personalizadas */
         @keyframes float {
             0% { transform: translateY(0px) rotate(0deg); }
-            25% { transform: translateY(-10px) rotate(1deg); }
-            50% { transform: translateY(0px) rotate(0deg); }
-            75% { transform: translateY(10px) rotate(-1deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
             100% { transform: translateY(0px) rotate(0deg); }
         }
 
         @keyframes pulse-glow {
-            0% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.7); }
-            70% { box-shadow: 0 0 20px 15px rgba(236, 72, 153, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+            70% { box-shadow: 0 0 20px 15px rgba(99, 102, 241, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
         }
 
-        @keyframes pulse-btn {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 15px 10px rgba(236, 72, 153, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
-        }
-
-        @keyframes gradient-bg {
+        @keyframes bg-animation {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
@@ -69,6 +62,7 @@
             100% { transform: translateX(100%); }
         }
 
+        /* Navegación */
         nav {
             position: fixed;
             width: 100%;
@@ -76,30 +70,26 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(15px);
             z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-            transition: 0.3s ease;
+            border-bottom: 1px solid var(--glass-border);
+            transition: all 0.4s ease;
         }
 
-        .logo {
+        .logo-text {
             font-size: 2rem;
             font-weight: 800;
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
-            position: relative;
-        }
-
-        .logo::after {
-            content: '®'; font-size: 0.8rem; vertical-align: super;
+            letter-spacing: -1px;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 35px;
             list-style: none;
         }
 
@@ -107,7 +97,8 @@
             color: var(--light);
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
+            text-transform: lowercase;
             transition: 0.3s;
             position: relative;
         }
@@ -118,471 +109,425 @@
             bottom: -5px;
             left: 0;
             width: 0%;
-            height: 3px;
-            background: var(--secondary);
+            height: 2px;
+            background: var(--gradient);
             transition: 0.3s;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover::after { width: 100%; }
 
         .menu-btn {
             display: none;
-            font-size: 1.8rem;
-            color: var(--light);
+            font-size: 1.5rem;
             cursor: pointer;
         }
 
+        /* Hero section */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 100px 20px 20px;
-            background: linear-gradient(-45deg, #1e1b4b, #312e81, #1e1b4b);
+            padding: 150px 20px 100px;
+            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #312e81, #0f172a);
             background-size: 400% 400%;
-            animation: gradient-bg 12s ease infinite;
+            animation: bg-animation 15s ease infinite;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: ''; position: absolute; top: -50px; left: -50px; width: 100px; height: 100px; background: rgba(99, 102, 241, 0.1); border-radius: 50%; filter: blur(30px); animation: float 8s infinite alternate;
-        }
-        .hero::after {
-            content: ''; position: absolute; bottom: 100px; right: 10%; width: 150px; height: 150px; background: rgba(236, 72, 153, 0.1); border-radius: 50%; filter: blur(40px); animation: float 12s infinite reverse;
         }
 
         .hero-content {
-            max-width: 900px;
+            max-width: 1000px;
             z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            line-height: 1.1;
         }
 
         .hero h1 span {
             color: var(--tertiary);
-            text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+            text-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
         }
 
         .hero p {
-            font-size: 1.6rem;
-            margin: 30px 0 50px;
-            color: #cbd5e1;
+            font-size: 1.4rem;
+            color: #94a3b8;
+            margin-bottom: 45px;
             font-weight: 300;
         }
 
         .btn {
-            padding: 18px 50px;
-            font-size: 1.3rem;
+            padding: 20px 50px;
+            font-size: 1.1rem;
             font-weight: 800;
             color: white;
             background: var(--gradient);
-            border: none;
             border-radius: 50px;
-            cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            transition: 0.3s;
-            animation: pulse-glow 2s infinite;
+            transition: 0.4s;
             position: relative;
             overflow: hidden;
+            animation: pulse-glow 2s infinite;
         }
 
         .btn::after {
-            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            animation: sheen 3s infinite;
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: sheen 4s infinite;
         }
 
         .btn:hover {
-            transform: scale(1.05) translateY(-5px);
-            box-shadow: 0 15px 40px rgba(236, 72, 153, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4);
         }
 
+        /* Secciones generales */
         .section {
             padding: 120px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
             text-align: center;
         }
 
         .section-title {
-            font-size: 3rem;
-            margin-bottom: 70px;
+            font-size: 3.5rem;
+            margin-bottom: 80px;
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: ''; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%);
-            width: 100px; height: 5px; background: var(--tertiary); border-radius: 10px;
         }
 
-        .comparison-grid {
+        /* Cards y grids */
+        .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 60px;
-            max-width: 1300px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 25px;
-            padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 50px;
+            border-radius: 30px;
+            transition: 0.4s;
+            text-align: left;
         }
 
         .card:hover {
-            transform: translateY(-20px) scale(1.02);
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255,255,255,0.3);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-10px);
         }
 
-        /* Imágenes de Unsplash (cover completo) */
         .card-img {
             width: 100%;
-            height: 250px;
+            height: 300px;
             object-fit: cover;
             border-radius: 20px;
-            margin-bottom: 30px;
-            animation: float 7s ease-in-out infinite;
+            margin-bottom: 35px;
+            animation: float 6s ease-in-out infinite;
         }
 
-        .card.excel .card-img { animation-delay: 0s; box-shadow: 0 5px 15px rgba(239, 68, 68, 0.2); }
-        .card.system .card-img { animation-delay: 3.5s; box-shadow: 0 5px 15px rgba(16, 185, 129, 0.2); }
+        .card.system .card-img {
+            object-fit: contain;
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+        }
 
         .card h3 {
-            font-size: 2rem;
-            margin-bottom: 25px;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
         }
 
-        .card.excel h3 { color: #ef4444; text-shadow: 0 0 10px rgba(239, 68, 68, 0.3); }
-        .card.system h3 { color: var(--tertiary); text-shadow: 0 0 10px rgba(16, 185, 129, 0.3); }
-
-        .card p {
-            font-size: 1.2rem;
-            color: #cbd5e1;
-            line-height: 1.8;
-            text-align: left;
+        .card ul {
+            list-style: none;
         }
 
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .benefit-item {
-            background: linear-gradient(180deg, rgba(99, 102, 241, 0.15), transparent);
-            padding: 50px 30px;
-            border-radius: 25px;
-            border-top: 4px solid var(--primary);
-            transition: 0.3s;
-            text-align: left;
-        }
-
-        .benefit-item:hover {
-            transform: scale(1.05);
-            background: linear-gradient(180deg, rgba(99, 102, 241, 0.25), transparent);
-        }
-
-        .benefit-icon {
-            font-size: 3.5rem;
-            color: var(--secondary);
-            margin-bottom: 25px;
-            transition: 0.3s;
-            display: block;
-            text-align: center;
-        }
-        
-        .benefit-item:hover .benefit-icon {
-            color: var(--gold);
-            transform: rotateY(360deg);
-        }
-
-        .benefit-item h3 {
-            text-align: center;
+        .card ul li {
             margin-bottom: 15px;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .portfolio-item {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: 0.4s;
-            position: relative;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-15px);
-            border-color: var(--tertiary);
-            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.3);
-        }
-
-        /* Pantallazos del portafolio (contain para que no se corten) */
-        .portfolio-img {
-            width: 100%;
-            height: 220px;
-            object-fit: contain; 
-            background-color: rgba(0, 0, 0, 0.3); 
-            padding: 10px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .portfolio-content {
-            padding: 25px;
-            text-align: left;
-        }
-
-        .portfolio-content h3 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .portfolio-content p {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             font-size: 1.1rem;
             color: #cbd5e1;
-            line-height: 1.5;
         }
 
+        .card ul li i { color: var(--tertiary); }
+
+        /* Grid 2x2 para servicios web */
+        .grid-2x2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 40px;
+            border-radius: 25px;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: var(--secondary);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        /* Portafolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .portfolio-card {
+            background: var(--glass);
+            border-radius: 25px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            transition: 0.4s;
+        }
+
+        .portfolio-card:hover {
+            transform: scale(1.03);
+            border-color: var(--tertiary);
+        }
+
+        .portfolio-img-container {
+            width: 100%;
+            height: 250px;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .portfolio-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .portfolio-info {
+            padding: 30px;
+            text-align: left;
+        }
+
+        /* Footer y CTA */
         .cta-section {
             background: var(--gradient);
             padding: 100px 20px;
+            border-radius: 80px 80px 0 0;
             text-align: center;
-            border-radius: 60px 60px 0 0;
-            margin-top: 80px;
-            position: relative;
         }
-
-        .cta-section h2 {
-            font-size: 3.5rem;
-            margin-bottom: 30px;
-        }
-
-        .cta-section p { font-size: 1.4rem; margin-bottom: 50px; font-weight: 300; max-width: 800px; margin-left: auto; margin-right: auto; }
 
         .btn-wa {
             background: #25d366;
-            animation: pulse-btn 2s infinite;
-        }
-        
-        .btn-wa:hover {
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+            animation: none;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         footer {
-            background: #000;
-            padding: 40px;
+            background: #050811;
+            padding: 50px 20px;
             text-align: center;
             color: #64748b;
+            border-top: 1px solid var(--glass-border);
         }
 
+        /* Mobile */
         @media (max-width: 768px) {
-            nav { padding: 20px; }
-            .logo { font-size: 1.6rem; }
-            .nav-links {
-                position: absolute;
-                top: 70px;
-                right: -100%;
-                flex-direction: column;
-                background: rgba(15, 23, 42, 0.98);
-                width: 100%;
-                text-align: center;
-                padding: 40px 0;
-                transition: 0.5s ease-in-out;
-            }
-            .nav-links.active { right: 0; }
+            nav { padding: 15px 25px; }
+            .nav-links { display: none; }
             .menu-btn { display: block; }
-            .hero h1 { font-size: 2.8rem; }
-            .hero p { font-size: 1.3rem; }
+            .hero h1 { font-size: 3rem; }
             .section-title { font-size: 2.5rem; }
-            .benefits-grid { grid-template-columns: 1fr; }
+            .grid-2, .grid-2x2 { grid-template-columns: 1fr; }
+            .card { padding: 30px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#inicio" class="logo">AMTECH <i class="fa-solid fa-code"></i></a>
+        <a href="#inicio" class="logo-text">AMTECH</a>
         <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#transformacion">Sistemas</a></li>
-            <li><a href="#web">Sitios web</a></li>
-            <li><a href="#casos">Portafolio</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#inicio">inicio</a></li>
+            <li><a href="#sistemas">sistemas</a></li>
+            <li><a href="#web">desarrollo web</a></li>
+            <li><a href="#portafolio">portafolio</a></li>
+            <li><a href="#contacto">contacto</a></li>
         </ul>
-        <div class="menu-btn">
-            <i class="fa-solid fa-bars"></i>
-        </div>
+        <div class="menu-btn"><i class="fa-solid fa-bars"></i></div>
     </nav>
 
     <header class="hero" id="inicio">
-        <div class="hero-content" data-aos="zoom-in" data-aos-duration="1200">
-            <h1>¿Cansado del caos y errores en <span>Excel?</span></h1>
-            <p>Convertimos tus complejas hojas de cálculo en sistemas profesionales o creamos tu sitio web desde cero. ¡Libera el verdadero potencial de tu negocio hoy!</p>
-            <a href="#contacto" class="btn">¡Modernizar mi negocio ahora!</a>
+        <div class="hero-content" data-aos="zoom-in">
+            <h1>¿cansado del caos y errores en <span>Excel?</span></h1>
+            <p>convertimos tus complejas hojas de cálculo en sistemas profesionales o creamos tu sitio web desde cero. ¡libera el verdadero potencial de tu negocio hoy!</p>
+            <a href="#contacto" class="btn">¡modernizar mi negocio ahora!</a>
         </div>
     </header>
 
-    <section class="section" id="transformacion">
-        <h2 class="section-title" data-aos="fade-up">Del pasado manual al futuro inteligente</h2>
-        <div class="comparison-grid">
-            
-            <div class="card excel" data-aos="fade-right" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Caos y complejidad en Excel" class="card-img">
-                <h3>El pasado: la hoja de cálculo imposible</h3>
-                <p><i class="fa-solid fa-xmark" style="color:#ef4444;"></i> Archivos pesados que se tildan o no abren.<br>
-                   <i class="fa-solid fa-xmark" style="color:#ef4444;"></i> Fórmulas misteriosas que se rompen fácilmente.<br>
-                   <i class="fa-solid fa-xmark" style="color:#ef4444;"></i> Solo una persona puede editar a la vez.<br>
-                   <i class="fa-solid fa-xmark" style="color:#ef4444;"></i> Riesgo de pérdida de datos sin respaldo automático.<br>
-                   <i class="fa-solid fa-triangle-exclamation" style="color:#f59e0b;"></i> ¡Te hace perder tiempo y dinero!
-                </p>
+    <section class="section" id="sistemas">
+        <h2 class="section-title" data-aos="fade-up">del pasado manual al futuro inteligente</h2>
+        <div class="grid-2">
+            <div class="card" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Excel antiguo" class="card-img">
+                <h3 style="color: #ef4444;">el pasado: la hoja de cálculo imposible</h3>
+                <ul>
+                    <li><i class="fa-solid fa-circle-xmark" style="color:#ef4444;"></i> archivos pesados que se tildan o no abren.</li>
+                    <li><i class="fa-solid fa-circle-xmark" style="color:#ef4444;"></i> fórmulas misteriosas que se rompen fácilmente.</li>
+                    <li><i class="fa-solid fa-circle-xmark" style="color:#ef4444;"></i> solo una persona puede editar a la vez.</li>
+                    <li><i class="fa-solid fa-circle-xmark" style="color:#ef4444;"></i> riesgo de pérdida de datos sin respaldo automático.</li>
+                </ul>
             </div>
 
-            <div class="card system" data-aos="fade-left" data-aos-delay="400">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Sistema profesional moderno y eficiente" class="card-img">
-                <h3>El futuro: tu sistema AMTECH</h3>
-                <p><i class="fa-solid fa-check" style="color:#10b981;"></i> Base de datos ultra rápida y robusta.<br>
-                   <i class="fa-solid fa-check" style="color:#10b981;"></i> Interfaz hermosa, moderna y muy intuitiva.<br>
-                   <i class="fa-solid fa-check" style="color:#10b981;"></i> Acceso multiusuario desde cualquier lugar.<br>
-                   <i class="fa-solid fa-check" style="color:#10b981;"></i> Automatización de tareas repetitivas.<br>
-                   <i class="fa-solid fa-rocket" style="color:var(--secondary);"></i> ¡Eleva tu productividad y control!
-                </p>
+            <div class="card system" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Sistema moderno" class="card-img">
+                <h3 style="color: var(--tertiary);">el futuro: tu sistema AMTECH</h3>
+                <ul>
+                    <li><i class="fa-solid fa-circle-check"></i> base de datos ultra rápida y robusta.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> interfaz hermosa, moderna y muy intuitiva.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> acceso multiusuario desde cualquier lugar.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> automatización de tareas repetitivas y dashboards.</li>
+                </ul>
             </div>
-
         </div>
     </section>
 
-    <section class="section" id="web" style="background: rgba(255,255,255,0.02);">
-        <h2 class="section-title" data-aos="fade-up">Desarrollo web a otro nivel</h2>
-        <p style="font-size: 1.2rem; color: #cbd5e1; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;" data-aos="fade-up">Construimos tu presencia digital con la última tecnología. Rapidez, diseño responsivo y optimización SEO garantizada desde el primer día.</p>
+    <section class="section" id="web" style="background: rgba(255,255,255,0.01);">
+        <h2 class="section-title" data-aos="fade-up">desarrollo web a medida</h2>
+        <p style="font-size: 1.3rem; color: #94a3b8; margin-bottom: 60px; max-width: 900px; margin-left: auto; margin-right: auto;">construimos tu presencia digital con la última tecnología. rapidez, diseño responsivo y optimización SEO garantizada desde el primer día.</p>
         
-        <div class="benefits-grid">
-            <div class="benefit-item" data-aos="zoom-in" data-aos-delay="100">
-                <i class="fa-solid fa-code benefit-icon"></i>
-                <h3>Cero plantillas genéricas</h3>
-                <p>No trabajamos con WordPress, Wix ni constructores lentos. Programamos a medida con código puro (Python, HTML, JS) para que tu web sea única, ultra rápida e invulnerable.</p>
+        <div class="grid-2x2">
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fa-solid fa-code service-icon"></i>
+                <h3>cero plantillas genéricas</h3>
+                <p>no trabajamos con WordPress, Wix ni constructores lentos. programamos a medida con código puro (Python, HTML, JS) para que tu web sea única e invulnerable.</p>
             </div>
-            <div class="benefit-item" data-aos="zoom-in" data-aos-delay="200">
-                <i class="fa-solid fa-pen-to-square benefit-icon"></i>
-                <h3>Totalmente autogestionable</h3>
-                <p>Si tu web no es estática, te creamos un panel intuitivo y privado para que cambies textos o imágenes tú mismo, sin arruinar el diseño responsivo en celulares.</p>
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fa-solid fa-pen-to-square service-icon"></i>
+                <h3>totalmente autogestionable</h3>
+                <p>si tu web lo requiere, creamos paneles intuitivos para que cambies textos o imágenes tú mismo, sin arruinar el diseño responsivo ni la estructura.</p>
             </div>
-            <div class="benefit-item" data-aos="zoom-in" data-aos-delay="300">
-                <i class="fa-solid fa-server benefit-icon"></i>
-                <h3>Hosting y despliegue</h3>
-                <p>Te entregamos todo el código listo. Adicionalmente, por un costo extra, gestionamos la subida a servidores, configuración de dominios y mantenimiento técnico.</p>
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+                <i class="fa-solid fa-server service-icon"></i>
+                <h3>hosting y despliegue</h3>
+                <p>te entregamos todo el código. adicionalmente, gestionamos la subida a servidores y dominios con un costo adicional para que no te preocupes por nada técnico.</p>
             </div>
-            <div class="benefit-item" data-aos="zoom-in" data-aos-delay="400">
-                <i class="fa-solid fa-magnifying-glass-chart benefit-icon"></i>
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+                <i class="fa-solid fa-rocket service-icon"></i>
                 <h3>SEO y rapidez de entrega</h3>
-                <p>Entregamos proyectos en tiempo récord y optimizados para Google (SEO). Usamos las mejores prácticas para que tus clientes te encuentren fácilmente.</p>
+                <p>entregamos proyectos en tiempo récord con las mejores prácticas de SEO integradas. usamos código eficiente para que cargue instantáneamente.</p>
             </div>
         </div>
     </section>
 
-    <section class="section" id="casos">
-        <h2 class="section-title" data-aos="fade-up">Sistemas listos y clientes felices</h2>
-        <p style="font-size: 1.2rem; color: #cbd5e1; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;" data-aos="fade-up">Además de crear soluciones a tu medida, contamos con sistemas pre-desarrollados y probados. Si necesitas algo similar, ¡ya tenemos la base lista para ti a un precio especial!</p>
+    <section class="section" id="portafolio">
+        <h2 class="section-title" data-aos="fade-up">sistemas listos y clientes felices</h2>
+        <p style="font-size: 1.2rem; color: #94a3b8; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto;">además de crear soluciones a medida, contamos con sistemas probados que puedes adquirir de inmediato para optimizar tu operación.</p>
         
         <div class="portfolio-grid">
-            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
-                <img src="controlproduccion.png" alt="Sistema de control de producción" class="portfolio-img">
-                <div class="portfolio-content">
-                    <h3>Control de producción</h3>
-                    <p>Gestión completa para el área logística y productiva, con seguimiento en tiempo real y fichas técnicas.</p>
+            <div class="portfolio-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="portfolio-img-container">
+                    <img src="controlproduccion.png" alt="Control de producción" class="portfolio-img">
+                </div>
+                <div class="portfolio-info">
+                    <h3 style="color: var(--primary);">control de producción</h3>
+                    <p>gestión completa para logística y planta, con seguimiento de máquinas en tiempo real y fichas técnicas automáticas.</p>
                 </div>
             </div>
 
-            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
-                <img src="quotecore.png" alt="Sistema de cotizaciones" class="portfolio-img">
-                <div class="portfolio-content">
-                    <h3>Gestor de cotizaciones</h3>
-                    <p>Crea, envía y administra cotizaciones profesionales en segundos. Olvídate de los cálculos manuales.</p>
+            <div class="portfolio-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="portfolio-img-container">
+                    <img src="quotecore.png" alt="Gestor de cotizaciones" class="portfolio-img">
+                </div>
+                <div class="portfolio-info">
+                    <h3 style="color: var(--primary);">gestor de cotizaciones</h3>
+                    <p>crea y administra cotizaciones profesionales en segundos. integrado con servicios de envío y cálculos de impuestos.</p>
                 </div>
             </div>
 
-            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
-                <img src="parking.png" alt="Sistema de parqueaderos" class="portfolio-img">
-                <div class="portfolio-content">
-                    <h3>Control de parqueaderos</h3>
-                    <p>Sistema de registro de entradas, salidas, cálculo automático de tarifas y control de caja.</p>
+            <div class="portfolio-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="portfolio-img-container">
+                    <img src="parking.png" alt="Control de parqueaderos" class="portfolio-img">
+                </div>
+                <div class="portfolio-info">
+                    <h3 style="color: var(--primary);">control de parqueaderos</h3>
+                    <p>sistema de registro de ingresos, cálculo automático de tarifas por tiempo y control total de caja diaria.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section" id="contacto" data-aos="fade-up">
-        <h2>¿Listo para el gran salto?</h2>
-        <p>Hablemos sobre tu archivo de Excel, la idea que tienes en mente o el sitio web que necesitas. Analizaremos tu negocio y te propondremos una solución de software perfecta y accesible.</p>
-        <a href="https://wa.me/573043343619?text=Hola%20AMTECH!%20Me%20interesa%20uno%20de%20sus%20servicios." class="btn btn-wa">
-            <i class="fa-brands fa-whatsapp"></i> Chatear por WhatsApp
-        </a>
+    <section class="cta-section" id="contacto">
+        <div data-aos="fade-up">
+            <h2 style="font-size: 3.5rem; margin-bottom: 20px;">¿listo para el gran salto?</h2>
+            <p style="font-size: 1.4rem; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">hablemos sobre tu archivo de Excel o el sitio web que necesitas. analizaremos tu negocio y te propondremos la solución perfecta.</p>
+            <a href="https://wa.me/573054605907?text=hola%20AMTECH!%20me%20gustaría%20digitalizar%20mi%20negocio." class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp" style="font-size: 1.5rem; margin-right: 10px;"></i> chatear por WhatsApp
+            </a>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 AMTECH. Transformando tus ideas en soluciones poderosas.</p>
+        <p>&copy; 2026 AMTECH. transformando tus ideas en soluciones poderosas.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Iniciar animaciones
         AOS.init({
+            duration: 1000,
             once: false,
-            mirror: true,
-            duration: 900
+            mirror: true
         });
 
-        const menuBtn = document.querySelector('.menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        const links = document.querySelectorAll('.nav-links a');
-
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const icon = menuBtn.querySelector('i');
-            if(navLinks.classList.contains('active')){
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
-        });
-
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                menuBtn.querySelector('i').classList.remove('fa-xmark');
-                menuBtn.querySelector('i').classList.add('fa-bars');
-            });
-        });
-
+        // Efecto Navbar scroll
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
-                nav.style.background = 'rgba(15, 23, 42, 0.98)';
                 nav.style.padding = '15px 50px';
+                nav.style.background = 'rgba(15, 23, 42, 0.98)';
             } else {
-                nav.style.background = 'rgba(15, 23, 42, 0.95)';
                 nav.style.padding = '20px 50px';
+                nav.style.background = 'rgba(15, 23, 42, 0.9)';
+            }
+        });
+
+        // Menú responsive básico
+        const menuBtn = document.querySelector('.menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        menuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            if(navLinks.style.display === 'flex') {
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.background = 'var(--dark)';
+                navLinks.style.padding = '30px';
             }
         });
     </script>
