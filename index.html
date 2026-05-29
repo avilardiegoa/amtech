@@ -16,18 +16,22 @@
   <meta property="og:title" content="AMTECH — Excel → Sistemas" />
   <meta
     property="og:description"
-    content="Tu operación sin caos: datos seguros, procesos automáticos y una interfaz clara. Offline u online, tú eliges."
+    content="Tu operación sin caos: datos seguros, procesos automáticos y una interfaz clara. Offline u online, tú eliges con precios accesibles."
   />
   <meta property="og:type" content="website" />
 
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="logoam.png" />
 
+  <!-- Preconnects para velocidad -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
 
+  <!-- Icons + AOS -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -120,18 +124,15 @@
       scroll-margin-top: calc(var(--navH) + 18px);
     }
 
-    /* ===== Loader ===== */
+    /* ===== Nuevo Loader Futurista ===== */
     .loader {
       position: fixed;
       inset: 0;
-      background:
-        radial-gradient(900px 500px at 20% 10%, rgba(99, 102, 241, 0.25), transparent 60%),
-        radial-gradient(900px 500px at 80% 10%, rgba(236, 72, 153, 0.20), transparent 60%),
-        linear-gradient(180deg, #070b18, #050811);
+      background: #050811;
       z-index: 5000;
       display: grid;
       place-items: center;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
     }
 
     .loader.hidden {
@@ -139,110 +140,89 @@
       visibility: hidden;
     }
 
-    .loader-card {
-      width: min(520px, calc(100% - 32px));
-      border: 1px solid rgba(255, 255, 255, 0.10);
-      background: rgba(255, 255, 255, 0.04);
-      backdrop-filter: blur(14px);
-      border-radius: 28px;
-      padding: 26px 22px;
-      box-shadow: var(--shadow);
-      text-align: center;
+    .futuristic-spinner {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      display: grid;
+      place-items: center;
     }
 
-    .loader-brand {
-      font-weight: 900;
-      letter-spacing: -1px;
-      font-size: 26px;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 10px;
+    .futuristic-spinner .loader-logo {
+      width: 60px;
+      height: auto;
+      z-index: 2;
+      animation: pulse-logo 2s infinite alternate;
     }
 
-    .loader-sub {
-      color: var(--muted);
-      font-size: 13px;
-      margin: 0 0 18px;
+    .futuristic-spinner .ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: var(--primary);
+      border-right-color: var(--secondary);
+      animation: spin-ring 1.5s linear infinite;
+      box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
     }
 
-    .bar {
-      height: 10px;
-      border-radius: 999px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(255, 255, 255, 0.05);
+    .futuristic-spinner .ring::before {
+      content: "";
+      position: absolute;
+      inset: -10px;
+      border-radius: 50%;
+      border: 2px dashed rgba(236, 72, 153, 0.4);
+      animation: spin-ring 3s linear infinite reverse;
     }
 
-    .bar > span {
-      display: block;
-      height: 100%;
-      width: 35%;
-      background: var(--gradient);
-      border-radius: 999px;
-      animation: loadMove 1.2s ease-in-out infinite;
+    @keyframes spin-ring {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
-    @keyframes loadMove {
-      0% {
-        transform: translateX(-120%);
-        width: 35%;
-        opacity: 0.7;
-      }
-      50% {
-        transform: translateX(60%);
-        width: 55%;
-        opacity: 1;
-      }
-      100% {
-        transform: translateX(220%);
-        width: 35%;
-        opacity: 0.7;
-      }
+    @keyframes pulse-logo {
+      0% { transform: scale(0.9); opacity: 0.8; filter: drop-shadow(0 0 10px var(--primary)); }
+      100% { transform: scale(1.1); opacity: 1; filter: drop-shadow(0 0 25px var(--secondary)); }
     }
 
-    /* ===== FX (Acelerado por GPU) ===== */
+    /* ===== FX (Acelerado por GPU - Sin Blur para rendimiento extremo) ===== */
     .fx-bg {
       position: fixed;
       inset: 0;
       pointer-events: none;
       z-index: 0;
-      opacity: 0.9;
+      opacity: 0.7;
       overflow: clip;
     }
 
     .blob {
       position: absolute;
-      width: 520px;
-      height: 520px;
-      filter: blur(60px);
-      opacity: 0.22;
+      width: 600px;
+      height: 600px;
       border-radius: 50%;
-      animation: floaty 10s ease-in-out infinite;
-      max-width: none;
-      will-change: transform;
+      animation: floaty 12s ease-in-out infinite;
       transform: translateZ(0); /* Acelera por hardware */
+      will-change: transform;
     }
 
     .blob.b1 {
-      left: -120px;
-      top: -120px;
-      background: #6366f1;
+      left: -150px;
+      top: -150px;
+      background: radial-gradient(circle, rgba(99,102,241,0.25) 0%, transparent 60%);
     }
 
     .blob.b2 {
-      right: -180px;
-      top: -80px;
-      background: #ec4899;
-      animation-delay: -3s;
+      right: -200px;
+      top: -100px;
+      background: radial-gradient(circle, rgba(236,72,153,0.2) 0%, transparent 60%);
+      animation-delay: -4s;
     }
 
     .blob.b3 {
-      left: 40%;
-      bottom: -260px;
-      background: #10b981;
-      animation-delay: -6s;
-      opacity: 0.16;
+      left: 35%;
+      bottom: -300px;
+      background: radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 60%);
+      animation-delay: -8s;
     }
 
     @keyframes floaty {
@@ -250,7 +230,7 @@
         transform: translate3d(0, 0, 0) scale(1);
       }
       50% {
-        transform: translate3d(22px, -18px, 0) scale(1.05);
+        transform: translate3d(30px, -20px, 0) scale(1.05);
       }
     }
 
@@ -412,7 +392,7 @@
       border: 1px solid rgba(255, 255, 255, 0.10);
       cursor: pointer;
       transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-      white-space: nowrap; /* Mantiene los botones en una sola línea */
+      white-space: nowrap;
       user-select: none;
       min-width: 0;
       max-width: 100%;
@@ -1337,7 +1317,6 @@
 
     /* ===== Responsive (Menú 100% perfecto) ===== */
     
-    /* El menú normal se esconde y pasa a hamburguesa de inmediato en los 1024px para que jamás se vea apretado */
     @media (max-width: 1024px) {
       :root {
         --navH: 76px;
@@ -1526,7 +1505,9 @@
 
       .blob,
       .btn-primary::after,
-      .loader .bar > span {
+      .futuristic-spinner .ring,
+      .futuristic-spinner .loader-logo,
+      .futuristic-spinner .ring::before {
         animation: none !important;
       }
 
@@ -1544,22 +1525,22 @@
 </head>
 
 <body>
-  <div class="loader" id="loader" aria-label="Cargando">
-    <div class="loader-card">
-      <div class="loader-brand">AMTECH</div>
-      <p class="loader-sub">Preparando una experiencia rápida y clara…</p>
-      <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso">
-        <span></span>
-      </div>
+  <!-- Loader Futurista -->
+  <div class="loader" id="loader" aria-label="Cargando AMTECH">
+    <div class="futuristic-spinner">
+      <img src="logoam.png" alt="AMTECH" class="loader-logo" />
+      <div class="ring"></div>
     </div>
   </div>
 
+  <!-- Background FX -->
   <div class="fx-bg" aria-hidden="true">
     <div class="blob b1"></div>
     <div class="blob b2"></div>
     <div class="blob b3"></div>
   </div>
 
+  <!-- NAV -->
   <nav id="nav">
     <div class="container nav-inner">
       <a class="brand" href="#inicio" aria-label="AMTECH inicio">
@@ -1581,7 +1562,7 @@
 
       <div class="nav-cta">
         <a class="btn btn-ghost" href="#portafolio"><i class="fa-solid fa-grid-2"></i> Ver portafolio</a>
-        <a class="btn btn-primary" href="#contacto"><i class="fa-solid fa-bolt"></i> Quiero una solución</a>
+        <a class="btn btn-primary" href="#contacto"><i class="fa-solid fa-bolt"></i> Cotizar ahora</a>
       </div>
 
       <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
@@ -1590,6 +1571,7 @@
     </div>
   </nav>
 
+  <!-- Mobile panel -->
   <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
     <a href="#inicio">inicio <i class="fa-solid fa-arrow-right"></i></a>
     <a href="#sistemas">excel → sistema <i class="fa-solid fa-arrow-right"></i></a>
@@ -1599,12 +1581,13 @@
     <a href="#contacto">contacto <i class="fa-solid fa-arrow-right"></i></a>
   </div>
 
+  <!-- HERO -->
   <header class="hero" id="inicio">
     <div class="container hero-grid">
       <div data-aos="fade-right">
         <div class="badge-row">
           <span class="badge"><i class="fa-solid fa-shield-halved"></i> Datos más seguros</span>
-          <span class="badge"><i class="fa-solid fa-gauge-high"></i> Fluidez real</span>
+          <span class="badge"><i class="fa-solid fa-hand-holding-dollar"></i> Precios accesibles</span>
           <span class="badge"><i class="fa-solid fa-wifi"></i> Offline u online</span>
         </div>
 
@@ -1621,7 +1604,7 @@
         <p class="lead">
           Si tu Excel ya tiene <strong>errores, versiones duplicadas o fórmulas frágiles</strong>,
           no necesitas “otro archivo”… necesitas un flujo claro:
-          <strong>datos ordenados + pantallas simples + automatización</strong>.
+          <strong>datos ordenados + pantallas simples + automatización a un precio justo</strong>.
         </p>
 
         <div class="hero-actions">
@@ -1642,9 +1625,8 @@
         </div>
 
         <div class="hero-note">
-          <span><i class="fa-solid fa-check"></i> Diagnóstico claro antes de construir</span>
-          <span><i class="fa-solid fa-check"></i> Entrega con guía de uso</span>
-          <span><i class="fa-solid fa-check"></i> Soporte y mejoras</span>
+          <span><i class="fa-solid fa-check"></i> Pago único o planes a medida</span>
+          <span><i class="fa-solid fa-check"></i> Entrega con guía de uso y soporte</span>
         </div>
       </div>
 
@@ -1670,13 +1652,14 @@
     </div>
   </header>
 
+  <!-- EXCEL -> SISTEMA -->
   <section class="section" id="sistemas">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
         <h2 class="section-title">Del caos manual a un flujo inteligente</h2>
         <p class="section-sub">
-          No se trata de “digitalizar por moda”. Se trata de que tu información deje de ser un riesgo
-          y se convierta en una herramienta que te ahorra tiempo, errores y dolores de cabeza.
+          No se trata de “digitalizar por moda” ni de pagar costosas licencias empresariales. 
+          Se trata de que tu información deje de ser un riesgo y sea una herramienta a tu medida.
         </p>
       </div>
 
@@ -1703,17 +1686,17 @@
             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=75&fm=webp" alt="Solucion AMTECH" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
-            <h3 style="color:var(--tertiary);">La solución AMTECH (simple y poderosa)</h3>
+            <h3 style="color:var(--tertiary);">La solución AMTECH (simple y accesible)</h3>
             <p>
               Convertimos tu lógica de negocio en un sistema <strong>práctico</strong>:
-              pantallas claras, base de datos rápida y procesos automatizados.
+              pantallas claras, base de datos rápida y solo pagas por lo que necesitas.
             </p>
             <ul class="bullets success">
               <li><i class="fa-solid fa-circle-check"></i> SQLite para velocidad, orden y respaldos fáciles.</li>
               <li><i class="fa-solid fa-circle-check"></i> Interfaz moderna: menos clics, menos errores.</li>
               <li><i class="fa-solid fa-circle-check"></i> Offline (local) o online (dominio/hosting) según tu caso.</li>
               <li><i class="fa-solid fa-circle-check"></i> Roles, historial y control real.</li>
-              <li><i class="fa-solid fa-circle-check"></i> Reportes automáticos sin “magia negra”.</li>
+              <li><i class="fa-solid fa-circle-check"></i> Cero pagos por licencias costosas tipo SAP.</li>
             </ul>
           </div>
         </article>
@@ -1721,13 +1704,14 @@
     </div>
   </section>
 
+  <!-- SERVICIOS -->
   <section class="section" id="servicios">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
         <h2 class="section-title">Servicios (en corto, pero con impacto)</h2>
         <p class="section-sub">
           Diseñamos soluciones claras, rápidas y mantenibles.
-          Tú decides el nivel: desde “salvar un Excel crítico” hasta construir un sistema completo.
+          Desde “salvar un Excel crítico” hasta construir tu tienda en línea o sistema completo.
         </p>
       </div>
 
@@ -1790,7 +1774,7 @@
         <div class="service" data-aos="zoom-in" data-aos-delay="300">
           <i class="fa-solid fa-cart-shopping"></i>
           <h4>E‑commerce a medida</h4>
-          <p>Catálogo, carrito y experiencia pensada para que la compra fluya sin fricción.</p>
+          <p>Catálogo, carrito y experiencia pensada para que la compra fluya sin fricción. Ideal para multiplicar tus ventas.</p>
           <div class="micro">
             <span class="tag">Conversión</span>
             <span class="tag">Catálogo</span>
@@ -1801,6 +1785,7 @@
     </div>
   </section>
 
+  <!-- PORTAFOLIO -->
   <section class="section" id="portafolio">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -1913,6 +1898,7 @@
     </div>
   </section>
 
+  <!-- PROCESO -->
   <section class="section" id="proceso">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -1947,6 +1933,7 @@
     </div>
   </section>
 
+  <!-- FAQ -->
   <section class="section" id="faq">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -1957,43 +1944,52 @@
       <div class="faq">
         <div class="faq-list" data-aos="fade-right">
           <details>
+            <summary>¿Es muy caro mandar a hacer un sistema a medida? <i class="fa-solid fa-chevron-down chev"></i></summary>
+            <p>No. Olvídate de licencias empresariales carísimas. Creamos soluciones accesibles de pago único o planes ajustados a tu tamaño. Solo pagas por lo que realmente usas, con precios desde proyectos para emprendedores hasta sistemas robustos.</p>
+          </details>
+          <details>
             <summary>¿Pierdo mis datos al salir de Excel? <i class="fa-solid fa-chevron-down chev"></i></summary>
-            <p>No. Migramos tu información a una base de datos y dejamos exportación/respaldos para que tengas control total.</p>
+            <p>De ninguna manera. Migramos tu información actual a la nueva base de datos y dejamos funciones de exportación y respaldo para que siempre tengas el control total.</p>
           </details>
           <details>
-            <summary>¿Puede ser 100% offline? <i class="fa-solid fa-chevron-down chev"></i></summary>
-            <p>Sí. Podemos hacerlo como app de escritorio o como web local en tu equipo o red interna. Y si luego quieres, lo pasamos a online.</p>
+            <summary>¿Cuánto tiempo tardan en entregarlo? <i class="fa-solid fa-chevron-down chev"></i></summary>
+            <p>Depende de la complejidad de tus necesidades, pero un sistema base o web suele estar listo entre 2 y 4 semanas. Siempre vamos haciendo entregas funcionales para que valides el avance.</p>
           </details>
           <details>
-            <summary>¿Y si mi proceso cambia cada mes? <i class="fa-solid fa-chevron-down chev"></i></summary>
-            <p>Construimos modular: primero lo crítico, luego mejoras. Así evolucionas sin romper todo cada vez que cambias una regla.</p>
+            <summary>¿Ofrecen garantía o soporte técnico? <i class="fa-solid fa-chevron-down chev"></i></summary>
+            <p>¡Claro! Entregamos el sistema funcionando al 100% junto con una guía de uso. Además, cuentas con nosotros para soporte, ajustes y opciones de mantenimiento por si quieres escalar el proyecto después.</p>
+          </details>
+          <details>
+            <summary>¿Puede ser 100% offline o sin internet? <i class="fa-solid fa-chevron-down chev"></i></summary>
+            <p>Sí. Desarrollamos apps de escritorio (Python) o sistemas web locales para operar en tu red interna sin necesidad de internet. Y si el día de mañana quieres pasarlo a la nube, lo adaptamos.</p>
           </details>
           <details>
             <summary>¿También hacen sitios web y tiendas? <i class="fa-solid fa-chevron-down chev"></i></summary>
-            <p>Sí. Landing, multipágina y e‑commerce. Todo responsivo y optimizado para velocidad y claridad.</p>
+            <p>Sí. Desde Landings promocionales hasta E-commerce completos. Todo responsivo, optimizado para cargar rápido (lo cual ayuda al SEO) y diseñado para generar ventas.</p>
           </details>
         </div>
 
         <aside class="faq-card" data-aos="fade-left">
           <h4>¿Qué necesito para empezar?</h4>
-          <p>Con esto podemos darte una propuesta aterrizada:</p>
+          <p>Con esto podemos darte una propuesta aterrizada y económica:</p>
           <ul class="mini">
             <li><i class="fa-solid fa-file-excel"></i> Tu Excel actual (o capturas del flujo).</li>
-            <li><i class="fa-solid fa-list-check"></i> Qué tareas haces a diario y qué te quita más tiempo.</li>
-            <li><i class="fa-solid fa-users"></i> Quiénes lo usan (roles/permisos).</li>
-            <li><i class="fa-solid fa-wifi"></i> Si lo quieres offline o online.</li>
+            <li><i class="fa-solid fa-list-check"></i> Qué tareas te quitan más tiempo diario.</li>
+            <li><i class="fa-solid fa-users"></i> Quiénes usarán el sistema (roles/permisos).</li>
+            <li><i class="fa-solid fa-wifi"></i> Si lo prefieres offline u online.</li>
           </ul>
         </aside>
       </div>
     </div>
   </section>
 
+  <!-- CONTACTO CTA -->
   <section class="cta" id="contacto">
     <div class="container" data-aos="zoom-in">
-      <h2>Haz que tu operación deje de depender de “un Excel frágil”</h2>
+      <h2>Haz que tu operación deje de depender de un "Excel frágil"</h2>
       <p>
-        Escríbenos y cuéntanos tu caso. Te decimos qué conviene y, si aplica,
-        te proponemos el camino más rápido para que tengas un sistema <strong>práctico</strong> de verdad.
+        Escríbenos y cuéntanos tu caso sin compromiso. Te propondremos el camino más rápido, 
+        seguro y <strong>accesible</strong> para que tengas un sistema que trabaje para ti.
       </p>
 
       <div class="hero-actions" style="justify-content:center;">
@@ -2007,7 +2003,7 @@
       </div>
 
       <div class="cta-note">
-        <i class="fa-solid fa-lock"></i> Tu información se trata con discreción y enfoque profesional.
+        <i class="fa-solid fa-lock"></i> Tu información y confidencialidad son 100% respetadas.
       </div>
     </div>
   </section>
@@ -2022,7 +2018,7 @@
           Avila Mora Tech
         </span>
       </div>
-      <div>Transformamos ideas en sistemas útiles: rápidos, claros y listos para el día a día.</div>
+      <div>Transformamos ideas en sistemas útiles: rápidos, claros y a tu alcance para el día a día.</div>
     </div>
   </footer>
 
@@ -2046,13 +2042,18 @@
       window.visualViewport.addEventListener("resize", setAppHeight);
     }
 
-    // ===== Loader =====
+    // ===== Loader Futurista =====
     window.addEventListener("load", () => {
       const loader = document.getElementById("loader");
-      loader.classList.add("hidden");
+      
+      // Forzar que el usuario vea la animación al menos 2.5 segundos
       setTimeout(() => {
-        if (loader) loader.remove();
-      }, 700);
+        loader.classList.add("hidden");
+        // Eliminar el elemento después de la transición de opacidad (0.8s)
+        setTimeout(() => {
+          if (loader) loader.remove();
+        }, 850);
+      }, 2500); 
     });
 
     // ===== AOS =====
