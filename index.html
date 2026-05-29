@@ -20,16 +20,14 @@
   />
   <meta property="og:type" content="website" />
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="logoam.png" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
 
-  <!-- Icons + AOS -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -203,7 +201,7 @@
       }
     }
 
-    /* ===== FX ===== */
+    /* ===== FX (Acelerado por GPU) ===== */
     .fx-bg {
       position: fixed;
       inset: 0;
@@ -223,6 +221,7 @@
       animation: floaty 10s ease-in-out infinite;
       max-width: none;
       will-change: transform;
+      transform: translateZ(0); /* Acelera por hardware */
     }
 
     .blob.b1 {
@@ -248,10 +247,10 @@
 
     @keyframes floaty {
       0%, 100% {
-        transform: translate(0, 0) scale(1);
+        transform: translate3d(0, 0, 0) scale(1);
       }
       50% {
-        transform: translate(22px, -18px) scale(1.05);
+        transform: translate3d(22px, -18px, 0) scale(1.05);
       }
     }
 
@@ -367,6 +366,7 @@
       color: rgba(248, 250, 252, 0.92);
       opacity: 0.92;
       transition: opacity 0.2s ease;
+      white-space: nowrap; /* Evita que los textos como 'excel -> sistema' se partan */
     }
 
     .nav-links a::after {
@@ -412,7 +412,7 @@
       border: 1px solid rgba(255, 255, 255, 0.10);
       cursor: pointer;
       transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-      white-space: nowrap;
+      white-space: nowrap; /* Mantiene los botones en una sola línea */
       user-select: none;
       min-width: 0;
       max-width: 100%;
@@ -1335,7 +1335,37 @@
       transform: translateY(0);
     }
 
-    /* ===== Responsive ===== */
+    /* ===== Responsive (Menú 100% perfecto) ===== */
+    
+    /* El menú normal se esconde y pasa a hamburguesa de inmediato en los 1024px para que jamás se vea apretado */
+    @media (max-width: 1024px) {
+      :root {
+        --navH: 76px;
+      }
+
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .menu-btn {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .brand {
+        max-width: calc(100% - 62px);
+      }
+
+      .brand-text {
+        font-size: 1.28rem;
+      }
+
+      .brand-sub {
+        font-size: 11px;
+      }
+    }
+
     @media (max-width: 980px) {
       .hero-grid {
         grid-template-columns: 1fr;
@@ -1372,32 +1402,6 @@
     }
 
     @media (max-width: 740px) {
-      :root {
-        --navH: 76px;
-      }
-
-      .nav-links,
-      .nav-cta {
-        display: none;
-      }
-
-      .menu-btn {
-        display: inline-grid;
-        place-items: center;
-      }
-
-      .brand {
-        max-width: calc(100% - 62px);
-      }
-
-      .brand-text {
-        font-size: 1.28rem;
-      }
-
-      .brand-sub {
-        font-size: 11px;
-      }
-
       .hero-grid,
       .grid-2,
       .services-grid,
@@ -1540,7 +1544,6 @@
 </head>
 
 <body>
-  <!-- Loader -->
   <div class="loader" id="loader" aria-label="Cargando">
     <div class="loader-card">
       <div class="loader-brand">AMTECH</div>
@@ -1551,14 +1554,12 @@
     </div>
   </div>
 
-  <!-- Background FX -->
   <div class="fx-bg" aria-hidden="true">
     <div class="blob b1"></div>
     <div class="blob b2"></div>
     <div class="blob b3"></div>
   </div>
 
-  <!-- NAV -->
   <nav id="nav">
     <div class="container nav-inner">
       <a class="brand" href="#inicio" aria-label="AMTECH inicio">
@@ -1589,7 +1590,6 @@
     </div>
   </nav>
 
-  <!-- Mobile panel -->
   <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
     <a href="#inicio">inicio <i class="fa-solid fa-arrow-right"></i></a>
     <a href="#sistemas">excel → sistema <i class="fa-solid fa-arrow-right"></i></a>
@@ -1599,7 +1599,6 @@
     <a href="#contacto">contacto <i class="fa-solid fa-arrow-right"></i></a>
   </div>
 
-  <!-- HERO -->
   <header class="hero" id="inicio">
     <div class="container hero-grid">
       <div data-aos="fade-right">
@@ -1636,7 +1635,7 @@
             Ver cómo funciona
           </a>
 
-          https://wa.me/573054605907?text=Hola%20AMTECH!%20Quiero%20convertir%20mi%20Excel%20en%20un%20sistema%20r%C3%A1pido%20y%20f%C3%A1cil%20de%20usar.
+          <a class="btn btn-wa" href="https://wa.me/573054605907?text=Hola%20AMTECH!%20Quiero%20convertir%20mi%20Excel%20en%20un%20sistema%20r%C3%A1pido%20y%20f%C3%A1cil%20de%20usar." target="_blank" rel="noopener">
             <i class="fa-brands fa-whatsapp"></i>
             WhatsApp
           </a>
@@ -1664,14 +1663,13 @@
           </ul>
 
           <div class="hero-img" aria-hidden="true">
-            https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=75&fm=webp" alt="Vista del sistema" decoding="async">
           </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- EXCEL -> SISTEMA -->
   <section class="section" id="sistemas">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -1685,7 +1683,7 @@
       <div class="grid-2">
         <article class="card" data-aos="fade-right">
           <div class="card-media">
-            https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1600&q=80
+            <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1600&q=75&fm=webp" alt="Caos en excel" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <h3 style="color:#ef4444;">El problema (y por qué se repite)</h3>
@@ -1702,7 +1700,7 @@
 
         <article class="card" data-aos="fade-left">
           <div class="card-media">
-            https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=75&fm=webp" alt="Solucion AMTECH" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <h3 style="color:var(--tertiary);">La solución AMTECH (simple y poderosa)</h3>
@@ -1723,7 +1721,6 @@
     </div>
   </section>
 
-  <!-- SERVICIOS -->
   <section class="section" id="servicios">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -1804,7 +1801,6 @@
     </div>
   </section>
 
-  <!-- PORTAFOLIO -->
   <section class="section" id="portafolio">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -1838,7 +1834,7 @@
               <h4>Multi‑páginas</h4>
               <p>Un sitio multipágina para confianza y posicionamiento (servicios, about, contacto, etc.).</p>
               <div class="demo-actions">
-                https://avilardiegoa.github.io/multipages/
+                <a class="btn btn-primary btn-wide" href="https://avilardiegoa.github.io/multipages/" target="_blank" rel="noopener">
                   <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver ejemplo
                 </a>
               </div>
@@ -1851,7 +1847,7 @@
               <h4>E‑commerce</h4>
               <p>Catálogo, carrito y una experiencia pensada para que la compra fluya.</p>
               <div class="demo-actions">
-                https://avilardiegoa.github.io/ecommerce/
+                <a class="btn btn-primary btn-wide" href="https://avilardiegoa.github.io/ecommerce/" target="_blank" rel="noopener">
                   <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver ejemplo
                 </a>
               </div>
@@ -1866,13 +1862,13 @@
         <div class="portfolio-grid">
           <div class="portfolio-card" data-aos="fade-up" data-aos-delay="120">
             <div class="portfolio-img-container">
-              <img src="controlproduccion.png" alt="Control de producción" loading="lazy" />
+              <img src="controlproduccion.png" alt="Control de producción" loading="lazy" decoding="async" />
             </div>
             <div class="portfolio-info">
               <h4 style="color: var(--primary);">Control de producción</h4>
               <p>Gestión completa para planta y logística: seguimiento de procesos, control operativo y fichas técnicas automáticas.</p>
               <div class="portfolio-actions">
-                https://wa.me/573054605907?text=Hola%20AMTECH!%20Me%20interesa%20el%20sistema%20de%20Control%20de%20Producci%C3%B3n.%20%C2%BFPueden%20ajustarlo%20a%20mi%20negocio%3F
+                <a class="btn btn-wa btn-wide" href="https://wa.me/573054605907?text=Hola%20AMTECH!%20Me%20interesa%20el%20sistema%20de%20Control%20de%20Producci%C3%B3n.%20%C2%BFPueden%20ajustarlo%20a%20mi%20negocio%3F" target="_blank" rel="noopener">
                   <i class="fa-brands fa-whatsapp"></i> Me interesa este sistema
                 </a>
               </div>
@@ -1881,13 +1877,13 @@
 
           <div class="portfolio-card" data-aos="fade-up" data-aos-delay="200">
             <div class="portfolio-img-container">
-              <img src="quotecore.png" alt="QuoteCore - Cotizaciones" loading="lazy" />
+              <img src="quotecore.png" alt="QuoteCore - Cotizaciones" loading="lazy" decoding="async" />
             </div>
             <div class="portfolio-info">
               <h4 style="color: var(--primary);">QuoteCore (cotizaciones)</h4>
               <p>Cotiza en segundos con formato profesional. Ideal para ventas: productos, cálculos, control y exportaciones.</p>
               <div class="portfolio-actions">
-                https://wa.me/573054605907?text=Hola%20AMTECH!%20Me%20interesa%20QuoteCore%20para%20cotizaciones.%20%C2%BFPueden%20adaptarlo%20a%20mi%20empresa%3F
+                <a class="btn btn-wa btn-wide" href="https://wa.me/573054605907?text=Hola%20AMTECH!%20Me%20interesa%20QuoteCore%20para%20cotizaciones.%20%C2%BFPueden%20adaptarlo%20a%20mi%20empresa%3F" target="_blank" rel="noopener">
                   <i class="fa-brands fa-whatsapp"></i> Me interesa este sistema
                 </a>
               </div>
@@ -1896,13 +1892,13 @@
 
           <div class="portfolio-card" data-aos="fade-up" data-aos-delay="280">
             <div class="portfolio-img-container">
-              <img src="parking.png" alt="Control de parqueaderos" loading="lazy" />
+              <img src="parking.png" alt="Control de parqueaderos" loading="lazy" decoding="async" />
             </div>
             <div class="portfolio-info">
               <h4 style="color: var(--primary);">Control de parqueaderos</h4>
               <p>Registro de ingresos, cálculo automático por tiempo y control de caja diario. Simple, rápido y claro.</p>
               <div class="portfolio-actions">
-                https://wa.me/573054605907?text=Hola%20AMTECH!%20Me%20interesa%20el%20sistema%20de%20Control%20de%20Parqueaderos.%20%C2%BFPueden%20ajustarlo%20a%20mi%20caso%3F
+                <a class="btn btn-wa btn-wide" href="https://wa.me/573054605907?text=Hola%20AMTECH!%20Me%20interesa%20el%20sistema%20de%20Control%20de%20Parqueaderos.%20%C2%BFPueden%20ajustarlo%20a%20mi%20caso%3F" target="_blank" rel="noopener">
                   <i class="fa-brands fa-whatsapp"></i> Me interesa este sistema
                 </a>
               </div>
@@ -1917,7 +1913,6 @@
     </div>
   </section>
 
-  <!-- PROCESO -->
   <section class="section" id="proceso">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -1952,7 +1947,6 @@
     </div>
   </section>
 
-  <!-- FAQ -->
   <section class="section" id="faq">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -1994,7 +1988,6 @@
     </div>
   </section>
 
-  <!-- CONTACTO CTA -->
   <section class="cta" id="contacto">
     <div class="container" data-aos="zoom-in">
       <h2>Haz que tu operación deje de depender de “un Excel frágil”</h2>
@@ -2004,10 +1997,7 @@
       </p>
 
       <div class="hero-actions" style="justify-content:center;">
-        "
-          target="_blank"
-          rel="noopener"
-        >
+        <a class="btn btn-wa" href="https://wa.me/573054605907" target="_blank" rel="noopener">
           <i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp
         </a>
 
