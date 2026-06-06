@@ -10,41 +10,49 @@
   <meta property="og:description" content="Tu operación sin caos: datos seguros, procesos automáticos y una interfaz clara. Offline u online, tú eliges con precios accesibles." />
   <meta property="og:type" content="website" />
 
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="logoam.png" />
 
+  <!-- Preconnects para velocidad -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
 
+  <!-- Icons + AOS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+  <!-- Enlace a tu nuevo archivo CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <div class="loader" id="loader" aria-label="Cargando">
+  <!-- Loader Futurista -->
+  <div class="loader" id="loader" aria-label="Cargando Avila Mora Soluciones">
     <div class="futuristic-spinner">
-      <img src="logoam.png" alt="Avila Mora" class="loader-logo" />
+      <img src="logoam.png" alt="Avila Mora Soluciones" class="loader-logo" />
       <div class="ring"></div>
     </div>
   </div>
 
+  <!-- Background FX -->
   <div class="fx-bg" aria-hidden="true">
     <div class="blob b1"></div>
     <div class="blob b2"></div>
     <div class="blob b3"></div>
   </div>
 
+  <!-- NAV -->
   <nav id="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#inicio" aria-label="Avila Mora inicio">
+      <a class="brand" href="#inicio" aria-label="Avila Mora Soluciones inicio">
         <span class="brand-dot" aria-hidden="true"></span>
         <span class="brand-wrap">
-          <div class="brand-text">Soluciones</div>
-          <div class="brand-sub">Avila Mora</div>
+          <div class="brand-text">Avila Mora</div>
+          <div class="brand-sub">Soluciones</div>
         </span>
       </a>
 
@@ -68,6 +76,7 @@
     </div>
   </nav>
 
+  <!-- Mobile panel -->
   <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
     <a href="#inicio">inicio <i class="fa-solid fa-arrow-right"></i></a>
     <a href="#sistemas">excel → sistema <i class="fa-solid fa-arrow-right"></i></a>
@@ -77,6 +86,7 @@
     <a href="#contacto">contacto <i class="fa-solid fa-arrow-right"></i></a>
   </div>
 
+  <!-- HERO -->
   <header class="hero" id="inicio">
     <div class="container hero-grid">
       <div data-aos="fade-right">
@@ -113,7 +123,7 @@
             Ver cómo funciona
           </a>
 
-          <a class="btn btn-wa" href="https://wa.me/573052547072?text=Hola%20Quiero%20convertir%20mi%20Excel%20en%20un%20sistema%20r%C3%A1pido%20y%20f%C3%A1cil%20de%20usar." target="_blank" rel="noopener">
+          <a class="btn btn-wa" href="https://wa.me/573052547072?text=Hola%20Avila%20Mora%20Soluciones!%20Quiero%20convertir%20mi%20Excel%20en%20un%20sistema%20r%C3%A1pido%20y%20f%C3%A1cil%20de%20usar." target="_blank" rel="noopener">
             <i class="fa-brands fa-whatsapp"></i>
             WhatsApp
           </a>
@@ -128,7 +138,7 @@
       <div class="hero-card" data-aos="fade-left">
         <div class="hero-card-inner">
           <div class="mini-title">
-            <h3>Lo que te llevas con nosotros</h3>
+            <h3>Lo que te llevas con Avila Mora Soluciones</h3>
             <span class="pill">RESULTADOS</span>
           </div>
           <ul class="checklist">
@@ -145,6 +155,7 @@
     </div>
   </header>
 
+  <!-- EXCEL -> SISTEMA -->
   <section class="section" id="sistemas">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -175,10 +186,10 @@
 
         <article class="card" data-aos="fade-left">
           <div class="card-media">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=75&fm=webp" alt="Solucion AMTECH" loading="lazy" decoding="async">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=75&fm=webp" alt="Solucion" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
-            <h3 style="color:var(--tertiary);">La solución Avila Mora (simple y accesible)</h3>
+            <h3 style="color:var(--tertiary);">La solución de Avila Mora Soluciones</h3>
             <p>
               Convertimos tu lógica de negocio en un sistema <strong>práctico</strong>:
               pantallas claras, base de datos rápida y solo pagas por lo que necesitas.
@@ -196,6 +207,7 @@
     </div>
   </section>
 
+  <!-- SERVICIOS -->
   <section class="section" id="servicios">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -276,6 +288,7 @@
     </div>
   </section>
 
+  <!-- MICRO CMS VISUAL -->
   <section class="section" id="microcms">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -324,10 +337,11 @@
             aplicado a un sitio web real.
           </p>
           <div class="micro">
-            <a class="btn btn-primary btn-sm btn-wide" href="https://avilamorasoluciones.github.io/microcmsam/" target="_blank" rel="noopener">Ver demo visual</a>
+            <a class="btn btn-primary btn-sm btn-wide" href="https://avilamorasoluciones.github.io/microcmsam/" target="_blank" rel="noopener">
+              Ver demo visual
+            </a>
           </div>
         </div>
-        
       </div>
       <div style="margin-top:16px;text-align:center;color:rgba(148,163,184,.95);font-weight:700;">
         Esta función se ofrece como complemento para sitios web que necesitan autogestión práctica.
@@ -335,6 +349,7 @@
     </div>
   </section>
 
+  <!-- PORTAFOLIO -->
   <section class="section" id="portafolio">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -402,8 +417,8 @@
               <h4 style="color: var(--primary);">Control de producción</h4>
               <p>Gestión completa para planta y logística: seguimiento de procesos, control operativo y fichas técnicas automáticas.</p>
               <div class="portfolio-actions">
-                <a class="btn btn-wa btn-wide" href="https://wa.me/573052547072?text=Hola%20Me%20interesa%20el%20sistema%20de%20Control%20de%20Producci%C3%B3n.%20%C2%BFPueden%20ajustarlo%20a%20mi%20negocio%3F" target="_blank" rel="noopener">
-                  <i class="fa-brands fa-whatsapp"></i> Me interesa este sistema
+                <a class="btn btn-wa btn-wide" href="https://wa.me/573052547072?text=Hola%20Avila%20Mora%20Soluciones!%20Me%20interesa%20el%20sistema%20de%20Control%20de%20Producci%C3%B3n.%20%C2%BFPueden%20ajustarlo%20a%20mi%20negocio%3F" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-whatsapp"></i> Me interesa
                 </a>
               </div>
             </div>
@@ -417,8 +432,8 @@
               <h4 style="color: var(--primary);">QuoteCore (cotizaciones)</h4>
               <p>Cotiza en segundos con formato profesional. Ideal para ventas: productos, cálculos, control y exportaciones.</p>
               <div class="portfolio-actions">
-                <a class="btn btn-wa btn-wide" href="https://wa.me/573052547072?text=Hola%20Me%20interesa%20QuoteCore%20para%20cotizaciones.%20%C2%BFPueden%20adaptarlo%20a%20mi%20empresa%3F" target="_blank" rel="noopener">
-                  <i class="fa-brands fa-whatsapp"></i> Me interesa este sistema
+                <a class="btn btn-wa btn-wide" href="https://wa.me/573052547072?text=Hola%20Avila%20Mora%20Soluciones!%20Me%20interesa%20QuoteCore%20para%20cotizaciones.%20%C2%BFPueden%20adaptarlo%20a%20mi%20empresa%3F" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-whatsapp"></i> Me interesa
                 </a>
               </div>
             </div>
@@ -432,8 +447,8 @@
               <h4 style="color: var(--primary);">Control de parqueaderos</h4>
               <p>Registro de ingresos, cálculo automático por tiempo y control de caja diario. Simple, rápido y claro.</p>
               <div class="portfolio-actions">
-                <a class="btn btn-wa btn-wide" href="https://wa.me/573052547072?text=Hola%20AMTECH!%20Me%20interesa%20el%20sistema%20de%20Control%20de%20Parqueaderos.%20%C2%BFPueden%20ajustarlo%20a%20mi%20caso%3F" target="_blank" rel="noopener">
-                  <i class="fa-brands fa-whatsapp"></i> Me interesa este sistema
+                <a class="btn btn-wa btn-wide" href="https://wa.me/573052547072?text=Hola%20Avila%20Mora%20Soluciones!%20Me%20interesa%20el%20sistema%20de%20Control%20de%20Parqueaderos.%20%C2%BFPueden%20ajustarlo%20a%20mi%20caso%3F" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-whatsapp"></i> Me interesa
                 </a>
               </div>
             </div>
@@ -446,6 +461,7 @@
     </div>
   </section>
 
+  <!-- PROCESO -->
   <section class="section" id="proceso">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -480,6 +496,7 @@
     </div>
   </section>
 
+  <!-- FAQ -->
   <section class="section" id="faq">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -529,6 +546,25 @@
     </div>
   </section>
 
+  <!-- JUEGOS (Inversa) -->
+  <section class="section section-inverted" id="juegos">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <h2 class="section-title">¿Momento de relax? 🎮</h2>
+        <p class="section-sub">
+          En Avila Mora Soluciones también creemos en la diversión. Hemos creado una suite de juegos 
+          familiares gratuitos y sin anuncios para conectar con los tuyos.
+        </p>
+      </div>
+      <div class="games-cta" data-aos="zoom-in">
+        <a href="https://avilamorasoluciones.github.io/juegos" target="_blank" rel="noopener" class="btn-game">
+          <i class="fa-solid fa-gamepad"></i> Ir a la sala de juegos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO CTA -->
   <section class="cta" id="contacto">
     <div class="container" data-aos="zoom-in">
       <h2>Haz que tu operación deje de depender de un "Excel frágil"</h2>
@@ -538,7 +574,7 @@
       </p>
 
       <div class="hero-actions" style="justify-content:center;">
-        <a class="btn btn-wa" href="https://wa.me/573052547072" target="_blank" rel="noopener">
+        <a class="btn btn-wa" href="https://wa.me/573052547072?text=Hola%20Avila%20Mora%20Soluciones!%20Quiero%20informaci%C3%B3n." target="_blank" rel="noopener">
           <i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp
         </a>
 
@@ -559,19 +595,17 @@
         <span style="padding:6px 10px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.04);font-weight:900;">
           © 2026 Avila Mora Soluciones
         </span>
-        <span style="padding:6px 10px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.04);font-weight:900;">
-          Avila Mora Tech
-        </span>
       </div>
       <div>Transformamos ideas en sistemas útiles: rápidos, claros y a tu alcance para el día a día.</div>
     </div>
   </footer>
 
+  <!-- Botones Flotantes -->
   <button class="to-top" id="toTop" aria-label="Volver arriba" title="Volver arriba">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
-  <a class="fab fab-wa" href="https://wa.me/573052547072?text=Hola%20AMTECH!%20Quiero%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="WhatsApp" title="Escríbenos por WhatsApp">
+  <a class="fab fab-wa" href="https://wa.me/573052547072?text=Hola%20Avila%20Mora%20Soluciones!%20Quiero%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="WhatsApp" title="Escríbenos por WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
@@ -579,6 +613,7 @@
     <i class="fa-solid fa-circle-half-stroke"></i>
   </button>
 
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
 </body>
