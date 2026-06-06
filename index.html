@@ -1521,6 +1521,61 @@
       opacity: 1 !important;
       transform: none !important;
     }
+    /* ===== Ajuste visual para la sección Micro CMS ===== */
+.microcms-cards .card{
+  border72,153,0.28);  border-radius: 26px;
+  background: rgba(255,255,255,0.055);
+}
+
+.microcms-cards .card > *{
+  position: relative;
+}
+
+.microcms-cards .card .card-body{
+  padding: 0;
+}
+
+.microcms-cards .bullets{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.microcms-cards .bullets li{
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.microcms-cards .card p{
+  color: rgba(203,213,225,0.95);
+  line-height: 1.6;
+}
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  padding: 22px;
+  transition: 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.22);
+}
+
+.microcms-cards .card::before{
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background:
+    radial-gradient(340px 180px at 20% 0%, rgba(99,102,241,0.18), transparent 60%),
+    radial-gradient(340px 180px at 80% 10%, rgba(236,72,153,0.12), transparent 60%);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.microcms-cards .card:hover{
+  transform: translateY(-6px);
   </style>
 </head>
 
@@ -1796,7 +1851,7 @@
       </p>
     </div>
 
-    <div class="grid-2">
+    <div class="grid-2 microcms-cards">
       <article class="card" data-aos="fade-right">
         <div class="card-body">
           <h3 style="color:var(--tertiary);">Lo que sí ofrece esta solución</h3>
