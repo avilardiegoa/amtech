@@ -385,6 +385,7 @@ details p { margin: 10px 0 0; color: rgba(203,213,225,0.95); font-weight: 500; }
 .section-inverted {
   background: #f8fafc; /* Claro por defecto (para cuando el tema de la web es oscuro) */
   color: #0f172a;
+  padding-bottom: 120px !important; /* Le da mucho aire abajo antes del choque con el degradado */
 }
 .section-inverted .section-title {
   background: var(--gradient);
@@ -397,7 +398,7 @@ details p { margin: 10px 0 0; color: rgba(203,213,225,0.95); font-weight: 500; }
 
 .games-cta {
   text-align: center;
-  padding: 20px;
+  padding: 40px 20px 20px; /* Separa un poco más el botón del texto de arriba */
 }
 
 .btn-game {
