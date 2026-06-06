@@ -1521,6 +1521,183 @@
       opacity: 1 !important;
       transform: none !important;
     }
+    /* ===== Floating buttons extra ===== */
+.fab {
+  position: fixed;
+  right: max(14px, var {  right: max(14px, var(--safe-right));
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.fab i {
+  font-size: 22px;
+}
+
+.fab-wa {
+  bottom: max(76px, calc(var(--safe-bottom) + 62px));
+  background: #25d366;
+  border-color: transparent;
+  color: #fff;
+}
+
+.fab-theme {
+  bottom: max(138px, calc(var(--safe-bottom) + 124px));
+  background: rgba(15,23,42,0.82);
+}
+
+@media (max-width: 740px) {
+  .fab {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+  }
+
+  .fab-theme {
+    bottom: max(128px, calc(var(--safe-bottom) + 114px));
+  }
+
+  .fab-wa {
+    bottom: max(70px, calc(var(--safe-bottom) + 56px));
+  }
+}
+
+/* ===== Tema claro ===== */
+body.light-theme {
+  --dark: #f8fafc;
+  --dark-2: #e9eefb;
+  --light: #0f172a;
+  --muted: #475569;
+  --muted-2: #64748b;
+  --glass: rgba(15, 23, 42, 0.04);
+  --glass-border: rgba(15, 23, 42, 0.10);
+  --shadow: 0 20px 50px rgba(15, 23, 42, 0.10);
+  --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.08);
+
+  background:
+    radial-gradient(1200px 600px at 12% 8%, rgba(99, 102, 241, 0.10), transparent 55%),
+    radial-gradient(900px 500px at 82% 12%, rgba(236, 72, 153, 0.08), transparent 55%),
+    radial-gradient(1000px 600px at 60% 92%, rgba(16, 185, 129, 0.06), transparent 60%),
+    linear-gradient(180deg, var(--dark), var(--dark-2));
+}
+
+body.light-theme html {
+  background: var(--dark);
+}
+
+body.light-theme nav {
+  background: rgba(255,255,255,0.75);
+  border-bottom: 1px solid rgba(15,23,42,0.08);
+}
+
+body.light-theme nav.compact {
+  background: rgba(255,255,255,0.88);
+}
+
+body.light-theme .mobile-panel,
+body.light-theme .hero-card,
+body.light-theme .card,
+body.light-theme .service,
+body.light-theme .demo,
+body.light-theme .portfolio-card,
+body.light-theme .step,
+body.light-theme details,
+body.light-theme .faq-card {
+  background: rgba(255,255,255,0.72);
+  border-color: rgba(15,23,42,0.08);
+  box-shadow: 0 14px 34px rgba(15,23,42,0.07);
+}
+
+body.light-theme .demo-top,
+body.light-theme .portfolio-img-container,
+body.light-theme .card-media {
+  background: rgba(15,23,42,0.04);
+  border-color: rgba(15,23,42,0.08);
+}
+
+body.light-theme .badge,
+body.light-theme .tag,
+body.light-theme .hero-note span,
+body.light-theme .checklist li,
+body.light-theme .mini li,
+body.light-theme .cta-note,
+body.light-theme .pill {
+  background: rgba(15,23,42,0.04);
+  border-color: rgba(15,23,42,0.08);
+  color: var(--light);
+}
+
+body.light-theme .nav-links a,
+body.light-theme .mobile-panel a,
+body.light-theme .hero .lead strong,
+body.light-theme .card h3,
+body.light-theme .card .bullets li,
+body.light-theme .section-title,
+body.light-theme .block-title,
+body.light-theme .demo-body h4,
+body.light-theme .portfolio-info h4,
+body.light-theme .faq-card h4,
+body.light-theme summary,
+body.light-theme .step h4,
+body.light-theme .service h4,
+body.light-theme .cta h2,
+body.light-theme footer,
+body.light-theme .to-top,
+body.light-theme .fab-theme {
+  color: var(--light);
+}
+
+body.light-theme .section-sub,
+body.light-theme .hero .lead,
+body.light-theme .card p,
+body.light-theme .service p,
+body.light-theme .demo-body p,
+body.light-theme .portfolio-info p,
+body.light-theme .faq-card p,
+body.light-theme details p,
+body.light-theme .step p,
+body.light-theme footer,
+body.light-theme .brand-sub {
+  color: var(--muted);
+}
+
+body.light-theme .btn-ghost {
+  background: rgba(15,23,42,0.04);
+  border-color: rgba(15,23,42,0.10);
+  color: var(--light);
+}
+
+body.light-theme .menu-btn,
+body.light-theme .to-top,
+body.light-theme .fab-theme {
+  background: rgba(255,255,255,0.78);
+  border-color: rgba(15,23,42,0.10);
+}
+
+body.light-theme footer {
+  background: rgba(226,232,240,0.65);
+  border-top: 1px solid rgba(15,23,42,0.08);
+}
+
+body.light-theme .cta-note {
+  background: rgba(255,255,255,0.58);
+}
+
+body.light-theme .brand-sub {
+  color: #64748b;
+}
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(12px);
+  color: rgba(248,250,252,0.96);
+  cursor: pointer;
+  z-index: 2200;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
   </style>
 </head>
 
@@ -1786,6 +1963,7 @@
   </section>
 
   <!-- MICRO CMS VISUAL -->
+  <section class="section" id="microcms">
   <div class="container">
     <div class="section-head" data-aos="fade-up">
       <h2 class="section-title">Tu web también puede ser autogestionable</h2>
@@ -2087,6 +2265,27 @@
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
+  <a
+  class="fab fab-wa"
+  href="https://wa.me/573052547072?text=Hola%20AMTECH!%20Quiero%20informaci%C3%B3n."
+  target="_blank"
+  rel="noopener"
+  aria-label="WhatsApp"
+  title="WhatsApp"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<button
+  class="fab fab-theme"
+  id="themeToggle"
+  type="button"
+  aria-label="Cambiar tema"
+  title="Cambiar tema"
+>
+  <i class="fa-solid fa-circle-half-stroke"></i>
+</button>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     // ===== Altura real en móvil =====
@@ -2271,6 +2470,38 @@
         }
       }
     });
+    // ===== Tema claro / oscuro =====    //    const THEME_KEY = "amtech-theme-preference";
+    const themeToggle = document.getElementById("themeToggle");
+    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+    function getAutoTheme() {
+      const hour = new Date().getHours();
+      return (hour >= 6 && hour < 18) ? "light" : "dark";
+    }
+
+    function applyTheme(theme) {
+      const isLight = theme === "light";
+      document.body.classList.toggle("light-theme", isLight);
+
+      if (themeColorMeta) {
+        themeColorMeta.setAttribute("content", isLight ? "#f8fafc" : "#0f172a");
+      }
+    }
+
+    function initTheme() {
+      const savedTheme = localStorage.getItem(THEME_KEY);
+      applyTheme(savedTheme || getAutoTheme());
+    }
+
+    if (themeToggle) {
+      themeToggle.addEventListener("click", () => {
+        const nextTheme = document.body.classList.contains("light-theme") ? "dark" : "light";
+        localStorage.setItem(THEME_KEY, nextTheme);
+        applyTheme(nextTheme);
+      });
+    }
+
+    initTheme();
   </script>
 </body>
 </html>
