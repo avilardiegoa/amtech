@@ -144,7 +144,7 @@ allMenuLinks.forEach((a) => {
 });
 
 // ===== Link activo =====
-const sections = ["inicio", "sistemas", "servicios", "portafolio", "faq", "contacto"]
+const sections = ["inicio", "sistemas", "servicios", "portafolio", "faq", "juegos", "contacto"]
   .map((id) => document.getElementById(id))
   .filter(Boolean);
 
@@ -180,7 +180,7 @@ window.addEventListener("load", () => {
 });
 
 // ===== Tema automático y manual =====
-const THEME_KEY = "amtech-theme-preference";
+const THEME_KEY = "ams-theme-preference";
 const themeToggle = document.getElementById("themeToggle");
 const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 
@@ -194,13 +194,13 @@ function applyTheme(theme) {
   const isLight = theme === "light";
   document.body.classList.toggle("light-theme", isLight);
   if (themeColorMeta) {
-    themeColorMeta.setAttribute("content", isLight ? "#f8fafc" : "#0f172a");
+    themeColorMeta.setAttribute("content", isLight ? "#f1f5f9" : "#0f172a");
   }
 }
 
 function initTheme() {
   const savedTheme = localStorage.getItem(THEME_KEY);
-  // Usa la preferencia guardada, si no existe, usa la hora actual del usuario
+  // Usa la preferencia guardada, si no existe, usa la hora actual
   applyTheme(savedTheme || getAutoTheme());
 }
 
