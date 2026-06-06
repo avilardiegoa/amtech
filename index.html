@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AMTECH — Convierte tus Excel en Sistemas Rápidos, Claros y Seguros</title>
+  <meta name="description" content="Transformamos Excel en sistemas offline/online: web local con SQLite o apps de escritorio en Python. También creamos sitios web, landings y e‑commerce a medida." />
+  <meta name="theme-color" content="#0f172a" />
+  <meta property="og:title" content="AMTECH — Excel → Sistemas" />
+  <meta property="og:description" content="Tu operación sin caos: datos seguros, procesos automáticos y una interfaz clara. Offline u online, tú eliges con precios accesibles." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" type="image/png" href="logoam.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="loader" id="loader" aria-label="Cargando AMTECH">
+    <div class="futuristic-spinner">
+      <img src="logoam.png" alt="AMTECH" class="loader-logo" />
+      <div class="ring"></div>
+    </div>
+  </div>
+
+  <div class="fx-bg" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+
+  <nav id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#inicio" aria-label="AMTECH inicio">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-wrap">
+          <div class="brand-text">AMTECH</div>
+          <div class="brand-sub">Avila Mora Tech</div>
+        </span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio">inicio</a></li>
+        <li><a href="#sistemas">excel → sistema</a></li>
+        <li><a href="#servicios">servicios</a></li>
+        <li><a href="#portafolio">portafolio</a></li>
+        <li><a href="#faq">preguntas</a></li>
+        <li><a href="#contacto">contacto</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="#portafolio"><i class="fa-solid fa-grid-2"></i> Ver portafolio</a>
+        <a class="btn btn-primary" href="#contacto"><i class="fa-solid fa-bolt"></i> Cotizar ahora</a>
+      </div>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
+    <a href="#inicio">inicio <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="#sistemas">excel → sistema <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="#servicios">servicios <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="#portafolio">portafolio <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="#faq">preguntas <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="#contacto">contacto <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+
+  <header class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div data-aos="fade-right">
+        <div class="badge-row">
+          <span class="badge"><i class="fa-solid fa-shield-halved"></i> Datos más seguros</span>
+          <span class="badge"><i class="fa-solid fa-hand-holding-dollar"></i> Precios accesibles</span>
+          <span class="badge"><i class="fa-solid fa-wifi"></i> Offline u online</span>
+        </div>
+
+        <h1>
+          Deja de “pelear” con <span class="accent">Excel</span>.
+          <br />
+          Convierte tu operación en un
+          <span style="background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
+            sistema rápido
+          </span>
+          y fácil de usar.
+        </h1>
+
+        <p class="lead">
+          Si tu Excel ya tiene <strong>errores, versiones duplicadas o fórmulas frágiles</strong>,
+          no necesitas “otro archivo”… necesitas un flujo claro:
+          <strong>datos ordenados + pantallas simples + automatización a un precio justo</strong>.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contacto">
+            <i class="fa-solid fa-rocket"></i>
+            Quiero modernizar mi negocio
+          </a>
+
+          <a class="btn btn-ghost" href="#sistemas">
+            <i class="fa-solid fa-diagram-project"></i>
+            Ver cómo funciona
+          </a>
+
+          <a class="btn btn-wa" href="https://wa.me/573052547072?text=Hola%20AMTECH!%20Quiero%20convertir%20mi%20Excel%20en%20un%20sistema%20r%C3%A1pido%20y%20f%C3%A1cil%20de%20usar." target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i>
+            WhatsApp
+          </a>
+        </div>
+
+        <div class="hero-note">
+          <span><i class="fa-solid fa-check"></i> Pago único o planes a medida</span>
+          <span><i class="fa-solid fa-check"></i> Entrega con guía de uso y soporte</span>
+        </div>
+      </div>
+
+      <div class="hero-card" data-aos="fade-left">
+        <div class="hero-card-inner">
+          <div class="mini-title">
+            <h3>Lo que te llevas con AMTECH</h3>
+            <span class="pill">RESULTADOS</span>
+          </div>
+          <ul class="checklist">
+            <li><i class="fa-solid fa-circle-check"></i> Control real: menos errores y más claridad en tu operación.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Datos en SQLite: rápido, ordenado y fácil de respaldar.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Interfaz limpia: cada tarea en su pantalla.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Automatizaciones: reportes, totales y exportaciones.</li>
+          </ul>
+          <div class="hero-img" aria-hidden="true">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=75&fm=webp" alt="Vista del sistema" decoding="async">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="sistemas">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <h2 class="section-title">Del caos manual a un flujo inteligente</h2>
+        <p class="section-sub">
+          No se trata de “digitalizar por moda” ni de pagar costosas licencias empresariales. 
+          Se trata de que tu información deje de ser un riesgo y sea una herramienta a tu medida.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card" data-aos="fade-right">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1600&q=75&fm=webp" alt="Caos en excel" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <h3 style="color:#ef4444;">El problema (y por qué se repite)</h3>
+            <p>Excel es genial… hasta que se vuelve tu “sistema”. Ahí aparecen los mismos síntomas una y otra vez:</p>
+            <ul class="bullets danger">
+              <li><i class="fa-solid fa-circle-xmark"></i> Versiones duplicadas (“final”, “final2”, “ahora sí”).</li>
+              <li><i class="fa-solid fa-circle-xmark"></i> Fórmulas frágiles: un cambio rompe todo.</li>
+              <li><i class="fa-solid fa-circle-xmark"></i> Falta de permisos: cualquiera borra o edita.</li>
+              <li><i class="fa-solid fa-circle-xmark"></i> Reportes manuales y lentos.</li>
+              <li><i class="fa-solid fa-circle-xmark"></i> Riesgo de pérdida de datos sin respaldo real.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card" data-aos="fade-left">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=75&fm=webp" alt="Solucion AMTECH" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <h3 style="color:var(--tertiary);">La solución AMTECH (simple y accesible)</h3>
+            <p>
+              Convertimos tu lógica de negocio en un sistema <strong>práctico</strong>:
+              pantallas claras, base de datos rápida y solo pagas por lo que necesitas.
+            </p>
+            <ul class="bullets success">
+              <li><i class="fa-solid fa-circle-check"></i> SQLite para velocidad, orden y respaldos fáciles.</li>
+              <li><i class="fa-solid fa-circle-check"></i> Interfaz moderna: menos clics, menos errores.</li>
+              <li><i class="fa-solid fa-circle-check"></i> Offline (local) o online (dominio/hosting) según tu caso.</li>
+              <li><i class="fa-solid fa-circle-check"></i> Roles, historial y control real.</li>
+              <li><i class="fa-solid fa-circle-check"></i> Cero pagos por licencias costosas tipo SAP.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <h2 class="section-title">Servicios (en corto, pero con impacto)</h2>
+        <p class="section-sub">
+          Diseñamos soluciones claras, rápidas y mantenibles.
+          Desde “salvar un Excel crítico” hasta construir tu tienda en línea o sistema completo.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service" data-aos="zoom-in" data-aos-delay="50">
+          <i class="fa-solid fa-table-cells-large"></i>
+          <h4>Excel → Sistema (web local u online)</h4>
+          <p>Convertimos tus procesos (ventas, inventario, cotizaciones, producción, reportes) en pantallas fáciles con base de datos.</p>
+          <div class="micro">
+            <span class="tag">SQLite</span>
+            <span class="tag">Roles</span>
+            <span class="tag">Reportes</span>
+          </div>
+        </div>
+
+        <div class="service" data-aos="zoom-in" data-aos-delay="100">
+          <i class="fa-solid fa-laptop-code"></i>
+          <h4>Apps de escritorio (Python Offline)</h4>
+          <p>Si necesitas trabajar sin internet y con máximo rendimiento: app local con datos seguros y flujos guiados.</p>
+          <div class="micro">
+            <span class="tag">Offline</span>
+            <span class="tag">Rápido</span>
+            <span class="tag">Respaldo</span>
+          </div>
+        </div>
+
+        <div class="service" data-aos="zoom-in" data-aos-delay="150">
+          <i class="fa-solid fa-bolt"></i>
+          <h4>Automatización “anti-repetición”</h4>
+          <p>Eliminamos tareas manuales: consolidación de datos, cálculos, alertas, exportaciones y generación de documentos.</p>
+          <div class="micro">
+            <span class="tag">Ahorro</span>
+            <span class="tag">Cero errores</span>
+            <span class="tag">Automático</span>
+          </div>
+        </div>
+
+        <div class="service" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fa-solid fa-chart-line"></i>
+          <h4>Dashboards y control</h4>
+          <p>Indicadores claros para decidir: ventas, gastos, producción, inventario y caja.</p>
+          <div class="micro">
+            <span class="tag">KPIs</span>
+            <span class="tag">Filtros</span>
+            <span class="tag">Export</span>
+          </div>
+        </div>
+
+        <div class="service" data-aos="zoom-in" data-aos-delay="250">
+          <i class="fa-solid fa-globe"></i>
+          <h4>Web profesional (landing o multipágina)</h4>
+          <p>Sitios rápidos, responsivos y con estructura clara. Código limpio y SEO desde el inicio.</p>
+          <div class="micro">
+            <span class="tag">SEO</span>
+            <span class="tag">Velocidad</span>
+            <span class="tag">Diseño</span>
+          </div>
+        </div>
+
+        <div class="service" data-aos="zoom-in" data-aos-delay="300">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <h4>E‑commerce a medida</h4>
+          <p>Catálogo, carrito y experiencia pensada para que la compra fluya sin fricción. Ideal para multiplicar tus ventas.</p>
+          <div class="micro">
+            <span class="tag">Conversión</span>
+            <span class="tag">Catálogo</span>
+            <span class="tag">Admin</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="microcms">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <h2 class="section-title">Tu web también puede ser autogestionable</h2>
+        <p class="section-sub">
+          Si lo necesitas, tu sitio puede incluir un editor visual para cambiar textos, imágenes
+          y secciones sin tocar código. El panel se adapta según el tipo de web y lo que realmente
+          necesites administrar.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service" data-aos="zoom-in" data-aos-delay="80">
+          <i class="fa-solid fa-pen-to-square"></i>
+          <h4>Lo que sí ofrece esta solución</h4>
+          <p>
+            Una forma práctica de editar contenido sin entrar al código y sin afectar el diseño general del sitio.
+          </p>
+          <div class="micro">
+            <span class="tag">Edición visual</span>
+            <span class="tag">Diseño protegido</span>
+            <span class="tag">Rápido</span>
+          </div>
+        </div>
+
+        <div class="service" data-aos="zoom-in" data-aos-delay="140">
+          <i class="fa-solid fa-circle-info"></i>
+          <h4>Lo que debes tener en cuenta</h4>
+          <p>
+            Esta demostración visual no representa automáticamente el producto final exacto.
+            Cada editor se construye según la estructura del sitio, la cantidad de contenido
+            y la forma en que deseas administrarlo.
+          </p>
+          <div class="micro">
+            <span class="tag">A medida</span>
+            <span class="tag">Flexible</span>
+            <span class="tag">Según tu web</span>
+          </div>
+        </div>
+
+        <div class="service" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fa-solid fa-desktop"></i>
+          <h4>Ver demostración visual</h4>
+          <p>
+            Explora una muestra funcional para entender cómo podría verse y sentirse un editor visual
+            aplicado a un sitio web real.
+          </p>
+          <div class="micro">
+            <a class="btn btn-primary btn-sm btn-wide" href="https://avilardiegoa.github.io/microcmsam/" target="_blank" rel="noopener">Ver demo visual</a>
+          </div>
+        </div>
+        
+      </div>
+      <div style="margin-top:16px;text-align:center;color:rgba(148,163,184,.95);font-weight:700;">
+        Esta función se ofrece como complemento para sitios web que necesitan autogestión práctica.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="portafolio">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <h2 class="section-title">Portafolio (ejemplos reales + sistemas listos)</h2>
+        <p class="section-sub">
+          Aquí ves cosas reales: diseños en vivo y sistemas que ya construimos.
+          Si uno de estos te sirve, lo dejamos <strong>ajustado a tu operación</strong> (campos, reglas, reportes, permisos y branding).
+        </p>
+      </div>
+
+      <div class="block" data-aos="fade-up">
+        <h3 class="block-title">Ejemplos web en vivo</h3>
+
+        <div class="demos-grid">
+          <div class="demo" data-aos="fade-up" data-aos-delay="80">
+            <div class="demo-top"><i class="fa-solid fa-rocket"></i></div>
+            <div class="demo-body">
+              <h4>Landing</h4>
+              <p>Una página enfocada a conversión: rápida, clara y con CTA fuerte.</p>
+              <div class="demo-actions">
+                <a class="btn btn-primary btn-wide" href="https://avilardiegoa.github.io/landing/" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver ejemplo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo" data-aos="fade-up" data-aos-delay="140">
+            <div class="demo-top"><i class="fa-solid fa-layer-group"></i></div>
+            <div class="demo-body">
+              <h4>Multi‑páginas</h4>
+              <p>Un sitio multipágina para confianza y posicionamiento (servicios, about, contacto, etc.).</p>
+              <div class="demo-actions">
+                <a class="btn btn-primary btn-wide" href="https://avilardiegoa.github.io/multipages/" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver ejemplo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo" data-aos="fade-up" data-aos-delay="200">
+            <div class="demo-top"><i class="fa-solid fa-cart-shopping"></i></div>
+            <div class="demo-body">
+              <h4>E‑commerce</h4>
+              <p>Catálogo, carrito y una experiencia pensada para que la compra fluya.</p>
+              <div class="demo-actions">
+                <a class="btn btn-primary btn-wide" href="https://avilardiegoa.github.io/ecommerce/" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver ejemplo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block" style="margin-top:42px;">
+        <h3 class="block-title">Sistemas listos (y adaptables a cada negocio)</h3>
+
+        <div class="portfolio-grid">
+          <div class="portfolio-card" data-aos="fade-up" data-aos-delay="120">
+            <div class="portfolio-img-container">
+              <img src="controlproduccion.png" alt="Control de producción" loading="lazy" decoding="async" />
+            </div>
+            <div class="portfolio-info">
+              <h4 style="color: var(--primary);">Control de producción</h4>
+              <p>Gestión completa para planta y logística: seguimiento de procesos, control operativo y fichas técnicas automáticas.</p>
+              <div class="portfolio-actions">
+                <a class="btn btn-wa btn-wide" href="https://wa.me/573052547072?text=Hola%20AMTECH!%20Me%20interesa%20el%20sistema%20de%20Control%20de%20Producci%C3%B3n.%20%C2%BFPueden%20ajustarlo%20a%20mi%20negocio%3F" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-whatsapp"></i> Me interesa este sistema
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="portfolio-img-container">
+              <img src="quotecore.png" alt="QuoteCore - Cotizaciones" loading="lazy" decoding="async" />
+            </div>
+            <div class="portfolio-info">
+              <h4 style="color: var(--primary);">QuoteCore (cotizaciones)</h4>
+              <p>Cotiza en segundos con formato profesional. Ideal para ventas: productos, cálculos, control y exportaciones.</p>
+              <div class="portfolio-actions">
+                <a class="btn btn-wa btn-wide" href="https://wa.me/573052547072?text=Hola%20AMTECH!%20Me%20interesa%20QuoteCore%20para%20cotizaciones.%20%C2%BFPueden%20adaptarlo%20a%20mi%20empresa%3F" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-whatsapp"></i> Me interesa este sistema
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card" data-aos="fade-up" data-aos-delay="280">
+            <div class="portfolio-img-container">
+              <img src="parking.png" alt="Control de parqueaderos" loading="lazy" decoding="async" />
+            </div>
+            <div class="portfolio-info">
+              <h4 style="color: var(--primary);">Control de parqueaderos</h4>
+              <p>Registro de ingresos, cálculo automático por tiempo y control de caja diario. Simple, rápido y claro.</p>
+              <div class="portfolio-actions">
+                <a class="btn btn-wa btn-wide" href="https://wa.me/573052547072?text=Hola%20AMTECH!%20Me%20interesa%20el%20sistema%20de%20Control%20de%20Parqueaderos.%20%C2%BFPueden%20ajustarlo%20a%20mi%20caso%3F" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-whatsapp"></i> Me interesa este sistema
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:16px;text-align:center;color:rgba(148,163,184,.95);font-weight:700;">
+          Estos sistemas sirven como base: los ajustamos a tu operación, tu marca y tus reglas.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="proceso">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <h2 class="section-title">Así evitamos “proyectos eternos”</h2>
+        <p class="section-sub">
+          Para que no pagues por humo: primero claridad, luego ejecución. Cada paso deja algo <strong>listo para usar</strong>.
+        </p>
+      </div>
+
+      <div class="process">
+        <div class="step" data-aos="fade-up" data-aos-delay="60">
+          <div class="num">1</div>
+          <h4>Diagnóstico</h4>
+          <p>Vemos tu Excel o proceso real y detectamos el 20% que causa el 80% del caos.</p>
+        </div>
+        <div class="step" data-aos="fade-up" data-aos-delay="120">
+          <div class="num">2</div>
+          <h4>Prototipo</h4>
+          <p>Maquetamos pantallas y flujo. Tú validas antes de construir.</p>
+        </div>
+        <div class="step" data-aos="fade-up" data-aos-delay="180">
+          <div class="num">3</div>
+          <h4>Construcción</h4>
+          <p>Desarrollo + base de datos + automatizaciones. Todo pensado para uso diario.</p>
+        </div>
+        <div class="step" data-aos="fade-up" data-aos-delay="240">
+          <div class="num">4</div>
+          <h4>Entrega y soporte</h4>
+          <p>Te dejamos funcionando + guía + mejoras si tu operación evoluciona.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <h2 class="section-title">Preguntas rápidas</h2>
+        <p class="section-sub">Las dudas típicas antes de dar el paso (y respuestas directas).</p>
+      </div>
+
+      <div class="faq">
+        <div class="faq-list" data-aos="fade-right">
+          <details>
+            <summary>¿Es muy caro mandar a hacer un sistema a medida? <i class="fa-solid fa-chevron-down chev"></i></summary>
+            <p>No. Olvídate de licencias empresariales carísimas. Creamos soluciones accesibles de pago único o planes ajustados a tu tamaño. Solo pagas por lo que realmente usas, con precios desde proyectos para emprendedores hasta sistemas robustos.</p>
+          </details>
+          <details>
+            <summary>¿Pierdo mis datos al salir de Excel? <i class="fa-solid fa-chevron-down chev"></i></summary>
+            <p>De ninguna manera. Migramos tu información actual a la nueva base de datos y dejamos funciones de exportación y respaldo para que siempre tengas el control total.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto tiempo tardan en entregarlo? <i class="fa-solid fa-chevron-down chev"></i></summary>
+            <p>Depende de la complejidad de tus necesidades, pero un sistema base o web suele estar listo entre 2 y 4 semanas. Siempre vamos haciendo entregas funcionales para que valides el avance.</p>
+          </details>
+          <details>
+            <summary>¿Ofrecen garantía o soporte técnico? <i class="fa-solid fa-chevron-down chev"></i></summary>
+            <p>¡Claro! Entregamos el sistema funcionando al 100% junto con una guía de uso. Además, cuentas con nosotros para soporte, ajustes y opciones de mantenimiento por si quieres escalar el proyecto después.</p>
+          </details>
+          <details>
+            <summary>¿Puede ser 100% offline o sin internet? <i class="fa-solid fa-chevron-down chev"></i></summary>
+            <p>Sí. Desarrollamos apps de escritorio (Python) o sistemas web locales para operar en tu red interna sin necesidad de internet. Y si el día de mañana quieres pasarlo a la nube, lo adaptamos.</p>
+          </details>
+          <details>
+            <summary>¿También hacen sitios web y tiendas? <i class="fa-solid fa-chevron-down chev"></i></summary>
+            <p>Sí. Desde Landings promocionales hasta E-commerce completos. Todo responsivo, optimizado para cargar rápido (lo cual ayuda al SEO) y diseñado para generar ventas.</p>
+          </details>
+        </div>
+
+        <aside class="faq-card" data-aos="fade-left">
+          <h4>¿Qué necesito para empezar?</h4>
+          <p>Con esto podemos darte una propuesta aterrizada y económica:</p>
+          <ul class="mini">
+            <li><i class="fa-solid fa-file-excel"></i> Tu Excel actual (o capturas del flujo).</li>
+            <li><i class="fa-solid fa-list-check"></i> Qué tareas te quitan más tiempo diario.</li>
+            <li><i class="fa-solid fa-users"></i> Quiénes usarán el sistema (roles/permisos).</li>
+            <li><i class="fa-solid fa-wifi"></i> Si lo prefieres offline u online.</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contacto">
+    <div class="container" data-aos="zoom-in">
+      <h2>Haz que tu operación deje de depender de un "Excel frágil"</h2>
+      <p>
+        Escríbenos y cuéntanos tu caso sin compromiso. Te propondremos el camino más rápido, 
+        seguro y <strong>accesible</strong> para que tengas un sistema que trabaje para ti.
+      </p>
+
+      <div class="hero-actions" style="justify-content:center;">
+        <a class="btn btn-wa" href="https://wa.me/573052547072" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp
+        </a>
+
+        <a class="btn btn-ghost" href="#portafolio">
+          <i class="fa-solid fa-eye"></i> Ver portafolio otra vez
+        </a>
+      </div>
+
+      <div class="cta-note">
+        <i class="fa-solid fa-lock"></i> Tu información y confidencialidad son 100% respetadas.
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:10px;">
+        <span style="padding:6px 10px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.04);font-weight:900;">
+          © 2026 AMTECH
+        </span>
+        <span style="padding:6px 10px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.04);font-weight:900;">
+          Avila Mora Tech
+        </span>
+      </div>
+      <div>Transformamos ideas en sistemas útiles: rápidos, claros y a tu alcance para el día a día.</div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Volver arriba" title="Volver arriba">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <a class="fab fab-wa" href="https://wa.me/573052547072?text=Hola%20AMTECH!%20Quiero%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="WhatsApp" title="Escríbenos por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <button class="fab fab-theme" id="themeToggle" type="button" aria-label="Cambiar tema" title="Cambiar tema">
+    <i class="fa-solid fa-circle-half-stroke"></i>
+  </button>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
