@@ -381,6 +381,52 @@ details p { margin: 10px 0 0; color: rgba(203,213,225,0.95); font-weight: 500; }
 .mini li { display: flex; gap: 10px; align-items: flex-start; padding: 12px 12px; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.09); font-weight: 700; color: rgba(226,232,240,0.95); }
 .mini i { margin-top: 2px; color: var(--gold); flex: 0 0 auto; }
 
+/* ===== JUEGOS (INVERSA) ===== */
+.section-inverted {
+  background: #f8fafc; /* Claro por defecto (para cuando el tema de la web es oscuro) */
+  color: #0f172a;
+}
+.section-inverted .section-title {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section-inverted .section-sub {
+  color: #475569;
+}
+
+.games-cta {
+  text-align: center;
+  padding: 20px;
+}
+
+.btn-game {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: var(--gradient);
+  color: #fff;
+  font-weight: 900;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+  animation: playful-bounce 2s infinite ease-in-out;
+  border: none;
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+}
+
+@keyframes playful-bounce {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+.btn-game:hover {
+  animation: none;
+  transform: scale(1.05);
+  color: #fff;
+}
+
 /* ===== CTA ===== */
 .cta { border-radius: 40px 40px 0 0; background: linear-gradient(135deg, rgba(99,102,241,0.95), rgba(236,72,153,0.92)); padding: 70px 0 calc(70px + var(--safe-bottom)); overflow: hidden; position: relative; }
 .cta::before { content: ""; position: absolute; inset: -2px; background: radial-gradient(600px 260px at 20% 10%, rgba(255,255,255,0.20), transparent 60%), radial-gradient(600px 260px at 80% 20%, rgba(255,255,255,0.16), transparent 60%); opacity: 0.9; pointer-events: none; }
@@ -391,7 +437,7 @@ details p { margin: 10px 0 0; color: rgba(203,213,225,0.95); font-weight: 500; }
 
 footer { background: #050811; border-top: 1px solid rgba(255,255,255,0.10); padding: 28px 0 calc(28px + var(--safe-bottom)); color: rgba(148,163,184,0.92); text-align: center; font-weight: 700; font-size: 14px; }
 
-/* ===== Floating buttons (CORREGIDOS) ===== */
+/* ===== Floating buttons ===== */
 .to-top {
   position: fixed;
   right: max(14px, var(--safe-right));
@@ -503,10 +549,8 @@ html:not(.aos-ready) [data-aos] { opacity: 1 !important; transform: none !import
 
 /* ===== Tema claro ===== */
 body.light-theme {
-  /* Fondo general un poco más gris/azulado para no encandilar */
   --dark: #f1f5f9;
   --dark-2: #e2e8f0;
-  /* Texto oscuro con alto contraste para mejor lectura */
   --light: #1e293b;
   --muted: #475569;
   --muted-2: #64748b;
@@ -517,7 +561,6 @@ body.light-theme {
   --shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
   --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.05);
 
-  /* Gradientes de fondo mucho más sutiles */
   background:
     radial-gradient(1200px 600px at 12% 8%, rgba(99, 102, 241, 0.06), transparent 55%),
     radial-gradient(900px 500px at 82% 12%, rgba(236, 72, 153, 0.05), transparent 55%),
@@ -527,11 +570,9 @@ body.light-theme {
 
 body.light-theme html { background: var(--dark); }
 
-/* Navegación sutilmente transparente */
 body.light-theme nav { background: rgba(241, 245, 249, 0.85); border-bottom: 1px solid rgba(15, 23, 42, 0.08); }
 body.light-theme nav.compact { background: rgba(241, 245, 249, 0.95); box-shadow: var(--shadow-soft); }
 
-/* Tarjetas puramente blancas para que "salten" sobre el fondo grisáceo */
 body.light-theme .mobile-panel,
 body.light-theme .hero-card,
 body.light-theme .card,
@@ -546,13 +587,11 @@ body.light-theme .faq-card {
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05); 
 }
 
-/* Encabezados oscuros en las tarjetas de portafolio y demo */
 body.light-theme .demo-top,
 body.light-theme .portfolio-img-container,
 body.light-theme .card-media { background: #f8fafc; border-color: rgba(15, 23, 42, 0.06); }
-body.light-theme .demo-top i { color: #475569; } /* Color oscuro para el icono del portafolio */
+body.light-theme .demo-top i { color: #475569; }
 
-/* Etiquetas y badges suaves */
 body.light-theme .badge,
 body.light-theme .tag,
 body.light-theme .hero-note span,
@@ -565,7 +604,6 @@ body.light-theme .pill {
   color: var(--light); 
 }
 
-/* Tipografía de títulos e interfaz */
 body.light-theme .nav-links a,
 body.light-theme .mobile-panel a,
 body.light-theme .hero .lead strong,
@@ -583,7 +621,6 @@ body.light-theme .cta h2,
 body.light-theme .to-top,
 body.light-theme .fab-theme { color: var(--light); }
 
-/* Tipografía secundaria (Muted) */
 body.light-theme .section-sub,
 body.light-theme .hero .lead,
 body.light-theme .card p,
@@ -595,7 +632,6 @@ body.light-theme details p,
 body.light-theme .step p,
 body.light-theme .brand-sub { color: var(--muted); }
 
-/* Ajustes en los botones flotantes y secundarios */
 body.light-theme .btn-ghost { background: #ffffff; border-color: rgba(15, 23, 42, 0.15); color: var(--light); }
 body.light-theme .btn-ghost:hover { background: #f1f5f9; }
 
@@ -603,8 +639,16 @@ body.light-theme .menu-btn,
 body.light-theme .to-top,
 body.light-theme .fab-theme { background: #ffffff; border-color: rgba(15, 23, 42, 0.15); color: var(--light); }
 
-/* Footer con un contraste más amigable */
 body.light-theme footer { background: #e2e8f0; border-top: 1px solid rgba(15, 23, 42, 0.08); color: var(--muted); }
 body.light-theme footer span { background: #ffffff !important; border-color: rgba(15, 23, 42, 0.1) !important; color: var(--light) !important; }
 
 body.light-theme .cta-note { background: rgba(255, 255, 255, 0.9); }
+
+/* Inversión en Tema Claro para Juegos */
+body.light-theme .section-inverted {
+  background: #0f172a; /* Oscuro cuando el tema general es claro */
+  color: #f8fafc;
+}
+body.light-theme .section-inverted .section-sub {
+  color: #cbd5e1;
+}
