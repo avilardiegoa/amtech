@@ -1521,61 +1521,6 @@
       opacity: 1 !important;
       transform: none !important;
     }
-    /* ===== Ajuste visual para la sección Micro CMS ===== */
-.microcms-cards .card{
-  border72,153,0.28);  border-radius: 26px;
-  background: rgba(255,255,255,0.055);
-}
-
-.microcms-cards .card > *{
-  position: relative;
-}
-
-.microcms-cards .card .card-body{
-  padding: 0;
-}
-
-.microcms-cards .bullets{
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 10px;
-}
-
-.microcms-cards .bullets li{
-  padding: 12px 14px;
-  border-radius: 16px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.microcms-cards .card p{
-  color: rgba(203,213,225,0.95);
-  line-height: 1.6;
-}
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.04);
-  padding: 22px;
-  transition: 0.25s ease;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 14px 40px rgba(0,0,0,0.22);
-}
-
-.microcms-cards .card::before{
-  content: "";
-  position: absolute;
-  inset: -2px;
-  background:
-    radial-gradient(340px 180px at 20% 0%, rgba(99,102,241,0.18), transparent 60%),
-    radial-gradient(340px 180px at 80% 10%, rgba(236,72,153,0.12), transparent 60%);
-  opacity: 0.85;
-  pointer-events: none;
-}
-
-.microcms-cards .card:hover{
-  transform: translateY(-6px);
   </style>
 </head>
 
@@ -1841,54 +1786,66 @@
   </section>
 
   <!-- MICRO CMS VISUAL -->
-<section class="  <div class="container"><section class="section" id="microcms">
+  <div class="container">
     <div class="section-head" data-aos="fade-up">
       <h2 class="section-title">Tu web también puede ser autogestionable</h2>
       <p class="section-sub">
         Si lo necesitas, tu sitio puede incluir un editor visual para cambiar textos, imágenes
-        y secciones sin tocar código. No usamos constructores pesados: adaptamos el panel según
-        el tipo de web que tengas y lo que realmente quieras administrar.
+        y secciones sin tocar código. El panel se adapta según el tipo de web y lo que realmente
+        necesites administrar.
       </p>
     </div>
 
-    <div class="grid-2 microcms-cards">
-      <article class="card" data-aos="fade-right">
-        <div class="card-body">
-          <h3 style="color:var(--tertiary);">Lo que sí ofrece esta solución</h3>
-          <ul class="bullets success">
-            <li><i class="fa-solid fa-circle-check"></i> Edición simple y visual.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Cambios rápidos sin entrar al código.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Diseño protegido para evitar errores.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Panel adaptado al tipo de sitio.</li>
-          </ul>
+    <div class="services-grid">
+      <div class="service" data-aos="zoom-in" data-aos-delay="80">
+        <i class="fa-solid fa-pen-to-square"></i>
+        <h4>Lo que sí ofrece esta solución</h4>
+        <p>
+          Una forma práctica de editar contenido sin entrar al código y sin afectar el diseño general del sitio.
+        </p>
+        <div class="micro">
+          <span class="tag">Edición visual</span>
+          <span class="tag">Diseño protegido</span>
+          <span class="tag">Rápido</span>
         </div>
-      </article>
+      </div>
 
-      <article class="card" data-aos="fade-left">
-        <div class="card-body">
-          <h3 style="color:var(--gold);">Lo que debes tener en cuenta</h3>
-          <p style="color:rgba(203,213,225,.95);">
-            La demostración visual no representa automáticamente el producto final exacto.
-            Cada editor se construye según la estructura del sitio, la cantidad de contenido
-            y la forma en que el cliente desea administrarlo.
-          </p>
-
-          <div class="hero-actions" style="margin-top:18px;">
-            <a class="btn btn-primary" href="https://avilardiegoa.github.io/microcmsam/" target="_blank" rel="noopener">
-              <i class="fa-solid fa-pen-to-square"></i> Ver demo visual
-            </a>
-            
-          </div>
-
-          <div style="margin-top:14px;color:rgba(148,163,184,.95);font-weight:700;">
-            Esta función se ofrece como complemento para sitios web que necesitan autogestión práctica.
-          </div>
+      <div class="service" data-aos="zoom-in" data-aos-delay="140">
+        <i class="fa-solid fa-circle-info"></i>
+        <h4>Lo que debes tener en cuenta</h4>
+        <p>
+          Esta demostración visual no representa automáticamente el producto final exacto.
+          Cada editor se construye según la estructura del sitio, la cantidad de contenido
+          y la forma en que deseas administrarlo.
+        </p>
+        <div class="micro">
+          <span class="tag">A medida</span>
+          <span class="tag">Flexible</span>
+          <span class="tag">Según tu web</span>
         </div>
-      </article>
+      </div>
+
+      <div class="service" data-aos="zoom-in" data-aos-delay="200">
+        <i class="fa-solid fa-desktop"></i>
+        <h4>Ver demostración visual</h4>
+        <p>
+          Explora una muestra funcional para entender cómo podría verse y sentirse un editor visual
+          aplicado a un sitio web real.
+        </p>
+        <div class="micro">
+          <a class="btn btn-primary btn-wide" href="https://avilardiegoa.github.io/microcmsam/" target="_blank" rel="noopener">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver demo visual
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;text-align:center;color:rgba(148,163,184,.95);font-weight:700;">
+      Esta función se ofrece como complemento para sitios web que necesitan autogestión práctica.
     </div>
   </div>
 </section>
-
+  
   <!-- PORTAFOLIO -->
   <section class="section" id="portafolio">
     <div class="container">
