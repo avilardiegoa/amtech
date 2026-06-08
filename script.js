@@ -144,7 +144,8 @@ allMenuLinks.forEach((a) => {
 });
 
 // ===== Link activo =====
-const sections = ["inicio", "sistemas", "servicios", "portafolio", "faq", "juegos", "contacto"]
+// ¡AQUÍ ESTÁ LA MAGIA ARREGLADA! Agregamos "tecnologias" y "microcms" a la lista
+const sections = ["inicio", "sistemas", "servicios", "tecnologias", "microcms", "portafolio", "proceso", "faq", "juegos", "contacto"]
   .map((id) => document.getElementById(id))
   .filter(Boolean);
 
@@ -184,7 +185,6 @@ const THEME_KEY = "ams-theme-preference";
 const themeToggle = document.getElementById("themeToggle");
 const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 
-// Detecta si son entre las 6:00am y las 5:59pm (horas de 6 a 17)
 function getAutoTheme() {
   const hour = new Date().getHours();
   return (hour >= 6 && hour < 18) ? "light" : "dark"; 
@@ -200,7 +200,6 @@ function applyTheme(theme) {
 
 function initTheme() {
   const savedTheme = localStorage.getItem(THEME_KEY);
-  // Usa la preferencia guardada, si no existe, usa la hora actual
   applyTheme(savedTheme || getAutoTheme());
 }
 

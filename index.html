@@ -27,6 +27,14 @@
 
   <!-- Enlace a tu nuevo archivo CSS -->
   <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Ajuste preventivo para el menú -->
+  <style>
+    @media (min-width: 1025px) {
+      .nav-links { gap: 18px !important; }
+      .nav-links a { font-size: 0.88rem !important; }
+    }
+  </style>
 </head>
 
 <body>
@@ -60,6 +68,7 @@
         <li><a href="#inicio">inicio</a></li>
         <li><a href="#sistemas">excel → sistema</a></li>
         <li><a href="#servicios">servicios</a></li>
+        <li><a href="#tecnologias">tecnología</a></li>
         <li><a href="#portafolio">portafolio</a></li>
         <li><a href="#faq">preguntas</a></li>
         <li><a href="#contacto">contacto</a></li>
@@ -67,7 +76,7 @@
 
       <div class="nav-cta">
         <a class="btn btn-ghost" href="#portafolio"><i class="fa-solid fa-grid-2"></i> Ver portafolio</a>
-        <a class="btn btn-primary" href="#contacto"><i class="fa-solid fa-bolt"></i> Cotizar ahora</a>
+        <a class="btn btn-primary" href="#contacto"><i class="fa-solid fa-bolt"></i> Cotizar</a>
       </div>
 
       <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
@@ -81,6 +90,7 @@
     <a href="#inicio">inicio <i class="fa-solid fa-arrow-right"></i></a>
     <a href="#sistemas">excel → sistema <i class="fa-solid fa-arrow-right"></i></a>
     <a href="#servicios">servicios <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="#tecnologias">tecnología <i class="fa-solid fa-arrow-right"></i></a>
     <a href="#portafolio">portafolio <i class="fa-solid fa-arrow-right"></i></a>
     <a href="#faq">preguntas <i class="fa-solid fa-arrow-right"></i></a>
     <a href="#contacto">contacto <i class="fa-solid fa-arrow-right"></i></a>
@@ -284,6 +294,67 @@
             <span class="tag">Admin</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUEVA SECCIÓN: TECNOLOGÍAS Y COSTOS -->
+  <section class="section" id="tecnologias" style="background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <h2 class="section-title">Transparencia técnica y costos</h2>
+        <p class="section-sub">
+          Nosotros cobramos por nuestro trabajo de desarrollo. Los servicios de terceros (servidores, APIs) los pagas tú directamente para que <strong>seas el dueño absoluto de tu sistema y tus datos</strong>. Aquí te explicamos cómo funciona para nuestra región.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <!-- Hosting -->
+        <article class="card" data-aos="fade-right">
+          <div class="card-body">
+            <h3 style="color:var(--primary);"><i class="fa-solid fa-server"></i> Servidores y Hosting</h3>
+            <p>Para que bots de WhatsApp o integraciones IA funcionen 24/7, necesitas un "servidor de aplicaciones" estable. Recomendamos excelentes opciones internacionales:</p>
+            <ul class="bullets">
+              <li><i class="fa-solid fa-check" style="color:var(--tertiary);"></i> <span><strong>Para empezar (PaaS):</strong> Render, Railway o Fly.io. Tienen planes gratuitos o cuestan desde $5 USD/mes. Excelentes para lanzar rápido.</span></li>
+              <li><i class="fa-solid fa-check" style="color:var(--tertiary);"></i> <span><strong>Para escalar (VPS):</strong> DigitalOcean o AWS Lightsail. Máximo control y potencia desde $5-$10 USD/mes. Ideales si manejas gran volumen de datos.</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- WhatsApp Bots -->
+        <article class="card" data-aos="fade-left">
+          <div class="card-body">
+            <h3 style="color:#25d366;"><i class="fa-brands fa-whatsapp"></i> Bots de WhatsApp</h3>
+            <p>Automatizamos tu atención al cliente y toma de pedidos con dos opciones según tu presupuesto:</p>
+            <ul class="bullets">
+              <li><i class="fa-solid fa-qrcode" style="color:var(--tertiary);"></i> <span><strong>Opción No Oficial (Gratis):</strong> Conectamos el bot escaneando un código QR en tu celular. No hay costo por mensaje enviado. Ideal para PyMEs.</span></li>
+              <li><i class="fa-solid fa-building" style="color:var(--tertiary);"></i> <span><strong>API Oficial de Meta (De pago):</strong> Súper estable y oficial. Meta te cobra tarifas mínimas por conversación (24 horas). Ideal para grandes corporativos.</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Inteligencia Artificial -->
+        <article class="card" data-aos="fade-right">
+          <div class="card-body">
+            <h3 style="color:var(--secondary);"><i class="fa-solid fa-brain"></i> Integración de IA</h3>
+            <p>Conectamos tu sistema con "cerebros" como ChatGPT (OpenAI) o Gemini (Google) para redactar correos, cotizar o clasificar mensajes automáticamente.</p>
+            <ul class="bullets">
+              <li><i class="fa-solid fa-key" style="color:var(--tertiary);"></i> <span><strong>Costos transparentes:</strong> Creas tu cuenta y generas una "API Key". Los proveedores te cobrarán directamente céntimos de dólar solo por lo que consumas. Nosotros nos encargamos de programar el "puente".</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- División de tareas -->
+        <article class="card" data-aos="fade-left">
+          <div class="card-body">
+            <h3 style="color:var(--gold);"><i class="fa-solid fa-handshake"></i> ¿Qué hace cada uno?</h3>
+            <p>Hacemos equipo contigo para que todo fluya sin trabas ni "costos ocultos":</p>
+            <ul class="bullets">
+              <li><i class="fa-solid fa-user" style="color:var(--muted-2);"></i> <span><strong>Tú nos entregas:</strong> Las reglas de tu negocio (ej. el menú del bot) y las cuentas de hosting/API activas con tu método de pago.</span></li>
+              <li><i class="fa-solid fa-code" style="color:var(--tertiary);"></i> <span><strong>Nosotros hacemos:</strong> Toda la programación, la arquitectura de base de datos, las conexiones y el despliegue para entregarte el sistema 100% listo para usar.</span></li>
+            </ul>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -546,8 +617,8 @@
     </div>
   </section>
 
-  <!-- JUEGOS (Inversa) -->
-  <section class="section section-inverted" id="juegos">
+  <!-- JUEGOS (Inversa con padding forzado en línea) -->
+  <section class="section section-inverted" id="juegos" style="padding-bottom: 40px !important;">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
         <h2 class="section-title">¿Momento de relax? 🎮</h2>
@@ -556,13 +627,15 @@
           familiares gratuitos y sin anuncios para conectar con los tuyos.
         </p>
       </div>
-      <div class="games-cta" data-aos="zoom-in">
+      <div class="games-cta" data-aos="zoom-in" style="padding: 40px 20px 20px;">
         <a href="https://avilamorasoluciones.github.io/juegos" target="_blank" rel="noopener" class="btn-game">
           <i class="fa-solid fa-gamepad"></i> Ir a la sala de juegos
         </a>
       </div>
     </div>
   </section>
+
+  <br>
 
   <!-- CONTACTO CTA -->
   <section class="cta" id="contacto">
