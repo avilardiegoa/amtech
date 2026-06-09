@@ -116,6 +116,32 @@
         color: var(--primary, #0f172a) !important;
         font-size: 1.05rem !important;
     }
+    /* =========================================
+       AJUSTE DE TAMAÑO DE BOTONES EN EL MENÚ
+       ========================================= */
+
+    /* 1. Reducir drásticamente los botones del menú */
+    .nav-cta .btn {
+        padding: 8px 16px !important; /* Menos relleno arriba/abajo y a los lados */
+        font-size: 0.85rem !important; /* Letra más pequeña */
+        height: auto !important; /* Evitar alturas fijas que los hagan ver gordos */
+        line-height: 1.2 !important;
+    }
+
+    /* 2. Achicar los íconos dentro de esos botones para que coincidan */
+    .nav-cta .btn i {
+        font-size: 0.85rem !important;
+    }
+
+    /* 3. Darle más respiro a las opciones del menú ahora que hay espacio */
+    .nav-links {
+        gap: 25px !important; /* Subimos la separación de 15px a 25px */
+    }
+
+    /* 4. Reducir un poco el espacio entre los dos botones para compactarlos */
+    .nav-cta {
+        gap: 10px !important;
+    }
   </style>
 </head>
 
