@@ -10,21 +10,98 @@
   <meta property="og:description" content="Toma el control de tu negocio. Datos seguros, procesos automáticos y una pantalla con botones grandes pensada para ti. Precios justos y sin pagos mensuales obligatorios." />
   <meta property="og:type" content="website" />
 
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="logoam.png" />
 
+  <!-- Preconnects para velocidad -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
 
+  <!-- Icons + AOS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+  <!-- Enlace a tu archivo CSS -->
   <link rel="stylesheet" href="styles.css" />
+  
+  <!-- CSS DE RESCATE (Menú y Tarjeta arreglados) -->
+  <style>
+    /* 1. Arreglo del Menú de Navegación */
+    .nav-inner {
+        display: flex !important;
+        flex-wrap: nowrap !important; 
+        justify-content: space-between !important; 
+        align-items: center !important;
+        width: 100% !important;
+    }
+    .nav-links {
+        display: flex !important;
+        gap: 20px !important;
+        margin: 0 auto !important; 
+        padding: 0 !important;
+        align-items: center !important;
+    }
+    .nav-links li {
+        list-style: none !important;
+    }
+    .nav-links a {
+        white-space: nowrap !important;
+        font-size: 0.95rem !important;
+        text-decoration: none !important;
+    }
+    .nav-cta {
+        display: flex !important;
+        gap: 15px !important;
+        align-items: center !important;
+        white-space: nowrap !important; 
+    }
+    @media (max-width: 1024px) {
+        .nav-links, .nav-cta {
+            display: none !important; 
+        }
+    }
+
+    /* 2. Arreglo de la Tarjeta de Beneficios */
+    .hero-checklist {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 18px !important; 
+        padding: 0 !important;
+        margin: 20px 0 !important;
+        list-style: none !important;
+    }
+    .hero-checklist li {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 12px !important; 
+        position: static !important;
+        height: auto !important; 
+        line-height: 1.4 !important;
+    }
+    .hero-checklist i {
+        color: #10b981 !important; 
+        font-size: 1.2rem !important;
+        margin-top: 2px !important;
+        flex-shrink: 0 !important; 
+    }
+    .chk-text {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 4px !important;
+    }
+    .chk-text strong {
+        color: var(--primary, #0f172a) !important;
+        font-size: 1.05rem !important;
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Loader Futurista -->
   <div class="loader" id="loader" aria-label="Cargando Avila Mora Soluciones">
     <div class="futuristic-spinner">
       <img src="logoam.png" alt="Avila Mora Soluciones" class="loader-logo" />
@@ -32,12 +109,14 @@
     </div>
   </div>
 
+  <!-- Background FX -->
   <div class="fx-bg" aria-hidden="true">
     <div class="blob b1"></div>
     <div class="blob b2"></div>
     <div class="blob b3"></div>
   </div>
 
+  <!-- NAV -->
   <nav id="nav">
     <div class="container nav-inner">
       <a class="brand" href="#inicio" aria-label="Avila Mora Soluciones inicio">
@@ -50,7 +129,7 @@
 
       <ul class="nav-links" id="navLinks">
         <li><a href="#inicio">inicio</a></li>
-        <li><a href="#sistemas">¿cómo te ayudamos?</a></li>
+        <li><a href="#sistemas">¿cómo ayudamos?</a></li>
         <li><a href="#servicios">servicios</a></li>
         <li><a href="#tecnologias">transparencia</a></li>
         <li><a href="#portafolio">ejemplos</a></li>
@@ -69,9 +148,10 @@
     </div>
   </nav>
 
+  <!-- Mobile panel -->
   <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
     <a href="#inicio">inicio <i class="fa-solid fa-arrow-right"></i></a>
-    <a href="#sistemas">¿cómo te ayudamos? <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="#sistemas">¿cómo ayudamos? <i class="fa-solid fa-arrow-right"></i></a>
     <a href="#servicios">servicios <i class="fa-solid fa-arrow-right"></i></a>
     <a href="#tecnologias">transparencia <i class="fa-solid fa-arrow-right"></i></a>
     <a href="#portafolio">ejemplos <i class="fa-solid fa-arrow-right"></i></a>
@@ -79,6 +159,7 @@
     <a href="#contacto">contacto <i class="fa-solid fa-arrow-right"></i></a>
   </div>
 
+  <!-- HERO -->
   <header class="hero" id="inicio">
     <div class="container hero-grid">
       <div data-aos="fade-right">
@@ -98,7 +179,7 @@
         </h1>
 
         <p class="lead">
-          Si llevas tus ventas, inventario o cotizaciones en hojas de Excel que se borran, se descuadran o nadie entiende, nosotros te armamos <strong>un sistema propio, con botones grandes y que hace el trabajo pesado por ti</strong>. Por un precio que sí puedes pagar.
+          Si llevas tus ventas, inventario o cotizaciones en hojas de Excel que se borran, se descuadran o nadie entiende, nosotros te armamos <strong>un sistema propio, con botones grandes y que hace el trabajo pesado por ti</strong>. Todo a un precio justo y accesible.
         </p>
 
         <div class="hero-actions">
@@ -112,15 +193,15 @@
             Ver cómo funciona
           </a>
 
-          <a class="btn btn-wa" href="https://wa.me/573052547072?text=Hola%20Avila%20Mora%20Soluciones!%20Quiero%20convertir%20el%20desorden%20de%20mi%20negocio%20en%20un%20sistema%20f%C3%A1cil%20de%20usar." target="_blank" rel="noopener">
+          <a class="btn btn-wa" href="https://wa.me/573052547072?text=Hola%20Avila%20Mora%20Soluciones!%20Quiero%20convertir%20mi%20desorden%20en%20un%20sistema%20f%C3%A1cil." target="_blank" rel="noopener">
             <i class="fa-brands fa-whatsapp"></i>
             WhatsApp
           </a>
         </div>
 
         <div class="hero-note">
-          <span><i class="fa-solid fa-check"></i> Pago único o planes accesibles</span>
-          <span><i class="fa-solid fa-check"></i> Te enseñamos a usarlo paso a paso</span>
+          <span><i class="fa-solid fa-check"></i> Pago único o planes a medida</span>
+          <span><i class="fa-solid fa-check"></i> Entrega con guía de uso y soporte</span>
         </div>
       </div>
 
@@ -152,7 +233,7 @@
             <li>
               <i class="fa-solid fa-circle-check"></i> 
               <div class="chk-text">
-                <strong>Cero licencias caras:</strong> Es tuyo, no pagas alquileres abusivos.
+                <strong>Cero licencias caras:</strong> Es tuyo, no pagas alquileres abusivos a grandes marcas.
               </div>
             </li>
           </ul>
@@ -161,12 +242,13 @@
     </div>
   </header>
 
+  <!-- EXCEL -> SISTEMA -->
   <section class="section" id="sistemas">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
         <h2 class="section-title">Del caos manual a tener paz mental</h2>
         <p class="section-sub">
-          Sabemos lo frustrante que es que tu negocio dependa de la memoria de un empleado o de un archivo viejo. Así es como te cambiamos la vida:
+          Sabemos lo frustrante que es que tu negocio dependa de la memoria de un empleado o de un archivo viejo. Así te cambiamos la vida:
         </p>
       </div>
 
@@ -176,13 +258,13 @@
             <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1600&q=75&fm=webp" alt="Caos en excel" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
-            <h3 style="color:#ef4444;">Tu situación actual (El estrés)</h3>
-            <p>Usar Excel para todo funciona al principio, pero cuando creces, se vuelve una pesadilla:</p>
+            <h3 style="color:#ef4444;">Tu situación actual (El problema)</h3>
+            <p>Usar Excel funciona al principio, pero cuando creces, se vuelve una pesadilla:</p>
             <ul class="bullets danger">
               <li><i class="fa-solid fa-circle-xmark"></i> Archivos perdidos como "ventas_final_ahorasi.xlsx".</li>
-              <li><i class="fa-solid fa-circle-xmark"></i> Alguien da un mal clic y borra información de años.</li>
+              <li><i class="fa-solid fa-circle-xmark"></i> Fórmulas frágiles: alguien da un mal clic y borra todo.</li>
               <li><i class="fa-solid fa-circle-xmark"></i> Pierdes horas armando cuentas a fin de mes.</li>
-              <li><i class="fa-solid fa-circle-xmark"></i> Si no estás en la oficina, no sabes qué está pasando.</li>
+              <li><i class="fa-solid fa-circle-xmark"></i> Cualquiera puede entrar y editar sin tu permiso.</li>
             </ul>
           </div>
         </article>
@@ -197,10 +279,10 @@
               Diseñamos un programita exclusivo para tu empresa, tan fácil de usar como una app de celular:
             </p>
             <ul class="bullets success">
-              <li><i class="fa-solid fa-circle-check"></i> Le das a un botón y hace los reportes de inmediato.</li>
-              <li><i class="fa-solid fa-circle-check"></i> Cada empleado tiene su clave (tú decides qué pueden ver y borrar).</li>
-              <li><i class="fa-solid fa-circle-check"></i> Lo puedes instalar en la compu de la oficina o verlo en internet.</li>
-              <li><i class="fa-solid fa-circle-check"></i> Información centralizada, ordenada y fácil de respaldar.</li>
+              <li><i class="fa-solid fa-circle-check"></i> Le das a un botón y genera los reportes al instante.</li>
+              <li><i class="fa-solid fa-circle-check"></i> Cada empleado tiene su clave (tú decides qué ven y qué no).</li>
+              <li><i class="fa-solid fa-circle-check"></i> Lo puedes instalar en la compu (offline) o verlo en internet.</li>
+              <li><i class="fa-solid fa-circle-check"></i> Información ordenada, rápida y súper fácil de respaldar.</li>
             </ul>
           </div>
         </article>
@@ -208,12 +290,13 @@
     </div>
   </section>
 
+  <!-- SERVICIOS -->
   <section class="section" id="servicios">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
-        <h2 class="section-title">¿En qué te podemos ayudar?</h2>
+        <h2 class="section-title">Nuestros Servicios</h2>
         <p class="section-sub">
-          No te hablamos de códigos raros. Te entregamos herramientas que se traducen en ganar tiempo y verte más profesional ante tus clientes.
+          Diseñamos soluciones claras, rápidas y mantenibles. Desde “salvar un Excel crítico” hasta construir tu tienda en línea o sistema completo.
         </p>
       </div>
 
@@ -221,31 +304,29 @@
         <div class="service" data-aos="zoom-in" data-aos-delay="50">
           <i class="fa-solid fa-table-cells-large"></i>
           <h4>Sistemas a tu medida</h4>
-          <p>Tomamos tus Excel y cuadernos y los volvemos un sistema con botones. Ideal para inventarios, ventas, agendas o producción.</p>
+          <p>Tomamos tus Excel y los volvemos un sistema con pantallas fáciles y bases de datos seguras. Ideal para ventas, inventario o producción.</p>
           <div class="micro">
-            <span class="tag">Fácil</span>
-            <span class="tag">Ordenado</span>
             <span class="tag">Seguro</span>
+            <span class="tag">Fácil de usar</span>
           </div>
         </div>
 
         <div class="service" data-aos="zoom-in" data-aos-delay="100">
           <i class="fa-solid fa-laptop-code"></i>
           <h4>Programas sin Internet</h4>
-          <p>Si en tu bodega o local falla el internet, te hacemos un programa que se instala en tu computadora y funciona perfectamente offline.</p>
+          <p>Si en tu local falla la conexión, te hacemos un programa (app de escritorio en Python) que funciona al 100% offline con máximo rendimiento.</p>
           <div class="micro">
             <span class="tag">No se cae</span>
-            <span class="tag">Rápido</span>
             <span class="tag">Privado</span>
           </div>
         </div>
 
         <div class="service" data-aos="zoom-in" data-aos-delay="150">
           <i class="fa-solid fa-bolt"></i>
-          <h4>Automatizar tareas aburridas</h4>
-          <p>Hacemos que el programa genere cotizaciones en PDF, sume totales diarios y envíe reportes con un solo clic. Cero trabajo repetitivo.</p>
+          <h4>Automatizar tareas repetitivas</h4>
+          <p>Eliminamos el trabajo manual. Hacemos que el programa consolide datos, mande alertas o genere PDFs en segundos.</p>
           <div class="micro">
-            <span class="tag">Ahorro de horas</span>
+            <span class="tag">Ahorro de tiempo</span>
             <span class="tag">Cero errores</span>
           </div>
         </div>
@@ -253,65 +334,85 @@
         <div class="service" data-aos="zoom-in" data-aos-delay="200">
           <i class="fa-solid fa-chart-line"></i>
           <h4>Control total (Dashboards)</h4>
-          <p>Una pantalla principal donde ves gráficas de cuánto vendiste hoy, qué producto falta y dónde está tu dinero, de un vistazo.</p>
+          <p>Una pantalla principal (panel de control) con gráficas claras para que sepas cómo van tus ventas, gastos e inventario al instante.</p>
           <div class="micro">
+            <span class="tag">Decisiones rápidas</span>
             <span class="tag">Gráficas</span>
-            <span class="tag">Claridad</span>
-            <span class="tag">Decisiones</span>
           </div>
         </div>
 
         <div class="service" data-aos="zoom-in" data-aos-delay="250">
           <i class="fa-solid fa-globe"></i>
-          <h4>Diseño de Páginas Web</h4>
-          <p>¿Tus clientes te buscan en internet? Te armamos una página profesional para que vendas tus servicios 24/7 y ganes credibilidad.</p>
+          <h4>Páginas Web Profesionales</h4>
+          <p>Sitios súper rápidos, adaptados a celulares y diseñados para que tus clientes confíen en ti y te contacten de inmediato.</p>
           <div class="micro">
-            <span class="tag">Profesional</span>
             <span class="tag">Atrae clientes</span>
+            <span class="tag">Presencia web</span>
           </div>
         </div>
 
         <div class="service" data-aos="zoom-in" data-aos-delay="300">
           <i class="fa-solid fa-cart-shopping"></i>
-          <h4>Tiendas Virtuales</h4>
-          <p>Tu propio catálogo de productos en línea con carrito de compras. Tus clientes eligen, compran y tú solo despachas.</p>
+          <h4>Tiendas Virtuales (E-commerce)</h4>
+          <p>Tu catálogo de productos en línea. Tus clientes eligen, llenan el carrito, compran, y tú te dedicas solo a despachar.</p>
           <div class="micro">
             <span class="tag">Más ventas</span>
-            <span class="tag">Catálogo</span>
-            <span class="tag">Fácil de usar</span>
+            <span class="tag">Autopiloto</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- TECNOLOGÍAS Y COSTOS -->
   <section class="section" id="tecnologias" style="background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
         <h2 class="section-title">Cuentas claras, amistades largas</h2>
         <p class="section-sub">
-          No nos gusta amarrar a nuestros clientes. Nosotros cobramos una sola vez por nuestro trabajo. Los costos de subirlo a internet los pagas directo a las empresas internacionales, <strong>para que tú seas el único dueño de tu información</strong>.
+          Nosotros cobramos por construir tu sistema. Los servicios de internet o IA los pagas directamente a los proveedores internacionales para que <strong>tú seas el dueño absoluto de tu información</strong>.
         </p>
       </div>
 
       <div class="grid-2">
         <article class="card" data-aos="fade-right">
           <div class="card-body">
-            <h3 style="color:var(--primary);"><i class="fa-solid fa-server"></i> El "Arriendo" en Internet</h3>
-            <p>Si quieres que tu sistema o página web lo pueda ver todo el mundo 24/7, hay que pagar un espacio (Hosting). Nosotros te recomendamos las opciones más económicas y estables:</p>
+            <h3 style="color:var(--primary);"><i class="fa-solid fa-server"></i> El "Arriendo" en Internet (Hosting)</h3>
+            <p>Si quieres que tu sistema funcione online 24/7, te recomendamos las mejores y más económicas opciones del mercado internacional:</p>
             <ul class="bullets">
-              <li><i class="fa-solid fa-check" style="color:var(--tertiary);"></i> <span><strong>Empresas seguras:</strong> Te ayudamos a alquilar espacios en empresas de Estados Unidos que cuestan unos $5 dólares al mes. Súper barato y sin caídas.</span></li>
+              <li><i class="fa-solid fa-check" style="color:var(--tertiary);"></i> <span><strong>Empresas accesibles:</strong> Puedes alquilar espacios en Render, Railway o DigitalOcean por unos $5 USD al mes. Nosotros te ayudamos a configurarlo.</span></li>
             </ul>
           </div>
         </article>
 
         <article class="card" data-aos="fade-left">
           <div class="card-body">
-            <h3 style="color:#25d366;"><i class="fa-brands fa-whatsapp"></i> Bots para WhatsApp</h3>
-            <p>Si quieres que un robot responda a tus clientes o tome pedidos automáticamente, tenemos dos rutas:</p>
+            <h3 style="color:#25d366;"><i class="fa-brands fa-whatsapp"></i> Bots de WhatsApp</h3>
+            <p>Automatizamos tu atención al cliente y toma de pedidos con dos opciones:</p>
             <ul class="bullets">
-              <li><i class="fa-solid fa-qrcode" style="color:var(--tertiary);"></i> <span><strong>La versión PyME:</strong> Escaneamos un código QR en el celular de tu negocio y ¡listo!, no pagas mensualidad a WhatsApp.</span></li>
-              <li><i class="fa-solid fa-building" style="color:var(--tertiary);"></i> <span><strong>La versión Oficial:</strong> Directo con Meta. Ideal si recibes miles de mensajes al día, tiene un pequeño costo por cada conversación.</span></li>
+              <li><i class="fa-solid fa-qrcode" style="color:var(--tertiary);"></i> <span><strong>La opción PyME (Gratis):</strong> Escaneas un código QR de tu negocio y listo. No hay cobros de Meta por mensaje.</span></li>
+              <li><i class="fa-solid fa-building" style="color:var(--tertiary);"></i> <span><strong>La opción Corporativa (De pago):</strong> API Oficial de Meta. Súper estable, ideal si tienes un flujo masivo de clientes.</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card" data-aos="fade-right">
+          <div class="card-body">
+            <h3 style="color:var(--secondary);"><i class="fa-solid fa-brain"></i> Integración de Inteligencia Artificial</h3>
+            <p>Conectamos tu sistema con el "cerebro" de ChatGPT o Gemini para redactar correos, cotizar rápido o clasificar mensajes automáticamente.</p>
+            <ul class="bullets">
+              <li><i class="fa-solid fa-key" style="color:var(--tertiary);"></i> <span><strong>Costos transparentes:</strong> Creas tu cuenta y estas empresas te cobran solo centavitos de dólar por cada tarea. Es como tener un empleado súper barato.</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card" data-aos="fade-left">
+          <div class="card-body">
+            <h3 style="color:var(--gold);"><i class="fa-solid fa-handshake"></i> Trabajo en equipo</h3>
+            <p>Hacemos equipo contigo para que todo fluya sin trabas ni "costos ocultos":</p>
+            <ul class="bullets">
+              <li><i class="fa-solid fa-user" style="color:var(--muted-2);"></i> <span><strong>Tu parte:</strong> Nos explicas las reglas de tu negocio y activas tus cuentas de pago.</span></li>
+              <li><i class="fa-solid fa-code" style="color:var(--tertiary);"></i> <span><strong>La nuestra:</strong> Programamos todo, conectamos las bases de datos y te entregamos la llave de tu sistema listo.</span></li>
             </ul>
           </div>
         </article>
@@ -319,35 +420,44 @@
     </div>
   </section>
 
+  <!-- MICRO CMS VISUAL -->
   <section class="section" id="microcms">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
-        <h2 class="section-title">Cambia tus propios textos y fotos</h2>
+        <h2 class="section-title">Cambia tus propios textos y fotos (CMS)</h2>
         <p class="section-sub">
-          ¿Quieres actualizar precios o cambiar fotos en tu web? No necesitas llamarnos ni saber de programación. Te dejamos un panel facilísimo para que lo hagas tú.
+          ¿Quieres actualizar los precios o poner una foto nueva en tu web? No necesitas llamarnos. Tu sitio puede incluir un panel de control para que edites tu contenido como si fuera un documento de Word.
         </p>
       </div>
 
       <div class="services-grid">
         <div class="service" data-aos="zoom-in" data-aos-delay="80">
           <i class="fa-solid fa-pen-to-square"></i>
-          <h4>Tú tienes el control</h4>
-          <p>Entras a tu panel con una contraseña, cambias el texto como en un documento de Word, guardas y se actualiza al instante.</p>
+          <h4>Lo que sí ofrece esta solución</h4>
+          <p>Una forma práctica de editar contenido tú mismo sin entrar al código, guardando los cambios al instante.</p>
+          <div class="micro">
+            <span class="tag">Edición visual</span>
+            <span class="tag">Tú tienes el control</span>
+          </div>
         </div>
 
         <div class="service" data-aos="zoom-in" data-aos-delay="140">
-          <i class="fa-solid fa-shield-halved"></i>
-          <h4>Anti-daños</h4>
-          <p>Diseñado para que no puedas "dañar" el diseño o borrar cosas importantes por accidente. Solo cambias lo que necesitas.</p>
+          <i class="fa-solid fa-circle-info"></i>
+          <h4>Lo que debes tener en cuenta</h4>
+          <p>Está diseñado para que no puedas "dañar" el diseño. Cambias el texto y las imágenes, pero la estructura fuerte de la web se mantiene protegida.</p>
+          <div class="micro">
+            <span class="tag">A medida</span>
+            <span class="tag">Anti-daños</span>
+          </div>
         </div>
 
         <div class="service" data-aos="zoom-in" data-aos-delay="200">
           <i class="fa-solid fa-desktop"></i>
-          <h4>Pruébalo ahora</h4>
-          <p>Haz clic abajo y mira lo fácil que es usar nuestro panel de control de prueba.</p>
+          <h4>Ver demostración visual</h4>
+          <p>Explora nuestra muestra para que veas lo fácil y amigable que es usar nuestro editor visual.</p>
           <div class="micro">
             <a class="btn btn-primary btn-sm btn-wide" href="https://avilamorasoluciones.github.io/microcmsam/" target="_blank" rel="noopener">
-              Ver cómo funciona
+              Ver demo visual
             </a>
           </div>
         </div>
@@ -355,27 +465,72 @@
     </div>
   </section>
 
+  <!-- PORTAFOLIO -->
   <section class="section" id="portafolio">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
-        <h2 class="section-title">Casos de Éxito</h2>
+        <h2 class="section-title">Portafolio y Casos de Éxito</h2>
         <p class="section-sub">
-          Aquí tienes páginas reales y programas que ya construimos. Si ves alguno que te guste, lo adaptamos con tu logo y tus reglas.
+          Aquí ves cosas reales: diseños en vivo y sistemas que ya construimos. Si uno te sirve, lo ajustamos a las reglas de tu negocio y con tu propio logo.
         </p>
       </div>
 
+      <div class="block" data-aos="fade-up">
+        <h3 class="block-title">Ejemplos de Páginas Web</h3>
+        <div class="demos-grid">
+          <div class="demo" data-aos="fade-up" data-aos-delay="80">
+            <div class="demo-top"><i class="fa-solid fa-rocket"></i></div>
+            <div class="demo-body">
+              <h4>Página Sencilla (Landing)</h4>
+              <p>Ideal para promocionar un solo servicio de forma directa y conseguir mensajes al WhatsApp.</p>
+              <div class="demo-actions">
+                <a class="btn btn-primary btn-wide" href="https://avilamorasoluciones.github.io/landing/" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver ejemplo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo" data-aos="fade-up" data-aos-delay="140">
+            <div class="demo-top"><i class="fa-solid fa-layer-group"></i></div>
+            <div class="demo-body">
+              <h4>Página Corporativa (Multipágina)</h4>
+              <p>Con varias secciones (Quiénes somos, Servicios) para empresas que quieren mostrar mucha autoridad.</p>
+              <div class="demo-actions">
+                <a class="btn btn-primary btn-wide" href="https://avilamorasoluciones.github.io/multipages/" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver ejemplo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo" data-aos="fade-up" data-aos-delay="200">
+            <div class="demo-top"><i class="fa-solid fa-cart-shopping"></i></div>
+            <div class="demo-body">
+              <h4>Tienda Virtual (E-commerce)</h4>
+              <p>Catálogo, carrito y experiencia de compra fluida. Gana dinero en internet las 24 horas.</p>
+              <div class="demo-actions">
+                <a class="btn btn-primary btn-wide" href="https://avilamorasoluciones.github.io/ecommerce/" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver ejemplo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="block" style="margin-top:42px;">
-        <h3 class="block-title">Programas listos para tu negocio</h3>
+        <h3 class="block-title">Sistemas Listos (Adaptables a ti)</h3>
         <div class="portfolio-grid">
           <div class="portfolio-card" data-aos="fade-up" data-aos-delay="120">
             <div class="portfolio-img-container">
               <img src="controlproduccion.png" alt="Control de producción" loading="lazy" decoding="async" />
             </div>
             <div class="portfolio-info">
-              <h4 style="color: var(--primary);">Control de Talleres o Fábricas</h4>
-              <p>Controlas materiales, en qué etapa va el pedido y qué empleado lo está haciendo.</p>
+              <h4 style="color: var(--primary);">Control de Talleres/Producción</h4>
+              <p>Gestión completa: controlas los materiales, en qué etapa va cada pedido y las fichas técnicas automáticas.</p>
               <div class="portfolio-actions">
-                <a class="btn btn-wa btn-wide" href="https://wa.me/573052547072" target="_blank" rel="noopener">
+                <a class="btn btn-wa btn-wide" href="https://wa.me/573052547072?text=Hola%20Avila%20Mora%20Soluciones!%20Me%20interesa%20el%20sistema%20de%20Producci%C3%B3n." target="_blank" rel="noopener">
                   <i class="fa-brands fa-whatsapp"></i> Lo quiero para mí
                 </a>
               </div>
@@ -387,10 +542,25 @@
               <img src="quotecore.png" alt="QuoteCore - Cotizaciones" loading="lazy" decoding="async" />
             </div>
             <div class="portfolio-info">
-              <h4 style="color: var(--primary);">Creador de Cotizaciones</h4>
-              <p>Eliges el cliente, los productos, y saca el PDF súper profesional en segundos.</p>
+              <h4 style="color: var(--primary);">QuoteCore (Cotizaciones)</h4>
+              <p>Eliges el cliente, los productos, y el sistema saca un PDF profesional en segundos. Ideal para ventas ágiles.</p>
               <div class="portfolio-actions">
-                <a class="btn btn-wa btn-wide" href="https://wa.me/573052547072" target="_blank" rel="noopener">
+                <a class="btn btn-wa btn-wide" href="https://wa.me/573052547072?text=Hola%20Avila%20Mora%20Soluciones!%20Me%20interesa%20QuoteCore." target="_blank" rel="noopener">
+                  <i class="fa-brands fa-whatsapp"></i> Lo quiero para mí
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card" data-aos="fade-up" data-aos-delay="280">
+            <div class="portfolio-img-container">
+              <img src="parking.png" alt="Control de parqueaderos" loading="lazy" decoding="async" />
+            </div>
+            <div class="portfolio-info">
+              <h4 style="color: var(--primary);">Sistema de Parqueaderos</h4>
+              <p>Registras la placa, cuenta el tiempo solo y te dice el total a cobrar. Control de caja diario sin errores.</p>
+              <div class="portfolio-actions">
+                <a class="btn btn-wa btn-wide" href="https://wa.me/573052547072?text=Hola%20Avila%20Mora%20Soluciones!%20Me%20interesa%20el%20sistema%20de%20Parqueaderos." target="_blank" rel="noopener">
                   <i class="fa-brands fa-whatsapp"></i> Lo quiero para mí
                 </a>
               </div>
@@ -401,37 +571,130 @@
     </div>
   </section>
 
-  <section class="section" id="faq">
+  <!-- PROCESO -->
+  <section class="section" id="proceso">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
-        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <h2 class="section-title">Así evitamos “proyectos eternos”</h2>
+        <p class="section-sub">
+          Te hablamos claro desde el primer día. Para que no pagues por humo: primero claridad, luego ejecución.
+        </p>
       </div>
 
-      <div class="faq">
-        <div class="faq-list" data-aos="fade-right">
-          <details>
-            <summary>¿Es muy difícil de usar? <i class="fa-solid fa-chevron-down chev"></i></summary>
-            <p>¡Para nada! Diseñamos pantallas tan intuitivas que parece que usaras WhatsApp. Si sabes dar clics, sabes usar nuestros sistemas.</p>
-          </details>
-          <details>
-            <summary>¿Se va a perder la información de mi Excel? <i class="fa-solid fa-chevron-down chev"></i></summary>
-            <p>Tranquilo. Copiamos todos tus clientes y productos al sistema nuevo para que arranques al día.</p>
-          </details>
+      <div class="process">
+        <div class="step" data-aos="fade-up" data-aos-delay="60">
+          <div class="num">1</div>
+          <h4>Diagnóstico</h4>
+          <p>Nos muestras tu Excel o cómo trabajas hoy, y ubicamos el problema principal que te quita tiempo.</p>
+        </div>
+        <div class="step" data-aos="fade-up" data-aos-delay="120">
+          <div class="num">2</div>
+          <h4>Dibujamos la idea</h4>
+          <p>Te mostramos cómo se verían las pantallas. Tú validas antes de empezar a programar.</p>
+        </div>
+        <div class="step" data-aos="fade-up" data-aos-delay="180">
+          <div class="num">3</div>
+          <h4>Construcción</h4>
+          <p>Programamos el sistema, conectamos la base de datos y lo hacemos a prueba de errores de uso diario.</p>
+        </div>
+        <div class="step" data-aos="fade-up" data-aos-delay="240">
+          <div class="num">4</div>
+          <h4>Entrega y te enseñamos</h4>
+          <p>Te lo instalamos, te entregamos una guía y cuentas con nuestro apoyo por si el negocio crece.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <p class="section-sub">Todo lo que nos preguntan siempre antes de dar el paso (con respuestas directas).</p>
+      </div>
+
+      <div class="faq">
+        <div class="faq-list" data-aos="fade-right">
+          <details>
+            <summary>¿Es muy caro mandar a hacer un sistema a medida? <i class="fa-solid fa-chevron-down chev"></i></summary>
+            <p>No. Olvídate de licencias empresariales carísimas (tipo SAP). Creamos soluciones accesibles de pago único o planes ajustados para emprendedores y PyMEs. Solo pagas por las herramientas que realmente vas a usar.</p>
+          </details>
+          <details>
+            <summary>¿Se va a perder la información que ya tengo en mi Excel? <i class="fa-solid fa-chevron-down chev"></i></summary>
+            <p>De ninguna manera. Migramos toda tu información vieja (clientes, productos, precios) a la nueva base de datos para que empieces a trabajar al día desde el primer minuto, sin perder historial.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto tiempo se demoran en hacer mi sistema? <i class="fa-solid fa-chevron-down chev"></i></summary>
+            <p>Depende de cuántas pantallas necesites, pero normalmente tardamos entre 2 y 4 semanas. Te vamos mostrando avances semanales funcionales para que vayas probando cómo queda.</p>
+          </details>
+          <details>
+            <summary>¿Ofrecen garantía o algún soporte técnico? <i class="fa-solid fa-chevron-down chev"></i></summary>
+            <p>¡Claro! Entregamos tu sistema funcionando al 100% junto con una guía práctica de uso. Además, siempre estamos a un mensaje de WhatsApp para darte soporte técnico o planear mejoras si tu empresa crece.</p>
+          </details>
+          <details>
+            <summary>¿Puede ser 100% offline o funcionar sin internet? <i class="fa-solid fa-chevron-down chev"></i></summary>
+            <p>Sí. Hacemos "Aplicaciones de Escritorio" programadas en Python que se instalan en tu computadora y operan con sus bases de datos sin necesidad de conexión a internet. Totalmente seguras y privadas.</p>
+          </details>
+          <details>
+            <summary>¿También hacen páginas web y tiendas online? <i class="fa-solid fa-chevron-down chev"></i></summary>
+            <p>Sí. Hacemos desde páginas sencillas (Landings) para promocionar un solo servicio, hasta tiendas virtuales completas (E-commerce) súper rápidas para que puedas vender y recibir pagos por internet.</p>
+          </details>
+        </div>
+
+        <aside class="faq-card" data-aos="fade-left">
+          <h4>¿Qué necesitamos para darte precio?</h4>
+          <p>Solo escríbenos al WhatsApp contándonos:</p>
+          <ul class="mini">
+            <li><i class="fa-solid fa-file-excel"></i> Cómo trabajas hoy (cuaderno o tu Excel actual).</li>
+            <li><i class="fa-solid fa-list-check"></i> Qué tarea manual te quita más horas de la semana.</li>
+            <li><i class="fa-solid fa-users"></i> Cuántos empleados usarán el programa.</li>
+            <li><i class="fa-solid fa-wifi"></i> Si prefieres que funcione con internet o sin internet.</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- JUEGOS -->
+  <section class="section section-inverted" id="juegos" style="padding-bottom: 40px !important;">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <h2 class="section-title">¿Momento de relax? 🎮</h2>
+        <p class="section-sub">
+          Sabemos que emprender es duro, por eso en Avila Mora Soluciones te regalamos una sala de juegos familiares gratuitos y sin anuncios.
+        </p>
+      </div>
+      <div class="games-cta" data-aos="zoom-in" style="padding: 40px 20px 20px;">
+        <a href="https://avilamorasoluciones.github.io/juegos" target="_blank" rel="noopener" class="btn-game">
+          <i class="fa-solid fa-gamepad"></i> Ir a la sala de juegos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <br>
+
+  <!-- CONTACTO CTA -->
   <section class="cta" id="contacto">
     <div class="container" data-aos="zoom-in">
-      <h2>Deja de sufrir con ese Excel que siempre se daña</h2>
+      <h2>Haz que tu operación deje de depender de un archivo frágil</h2>
       <p>
-        Escríbenos al WhatsApp. Te daremos la ruta más fácil y económica para tu negocio.
+        Escríbenos y charlemos. Te daremos la ruta más fácil y económica para que tu negocio tenga un sistema profesional trabajando para ti.
       </p>
+
       <div class="hero-actions" style="justify-content:center;">
-        <a class="btn btn-wa" href="https://wa.me/573052547072" target="_blank" rel="noopener">
+        <a class="btn btn-wa" href="https://wa.me/573052547072?text=Hola%20Avila%20Mora%20Soluciones!%20Quiero%20informaci%C3%B3n%20para%20mejorar%20mi%20negocio." target="_blank" rel="noopener">
           <i class="fa-brands fa-whatsapp"></i> Chatear por WhatsApp
         </a>
+
+        <a class="btn btn-ghost" href="#portafolio">
+          <i class="fa-solid fa-eye"></i> Volver a ver ejemplos
+        </a>
+      </div>
+
+      <div class="cta-note">
+        <i class="fa-solid fa-lock"></i> Tu información y confidencialidad son 100% respetadas.
       </div>
     </div>
   </section>
@@ -444,6 +707,19 @@
       <div style="margin-top: 10px;">Haciéndole la vida digital más fácil a los negocios.</div>
     </div>
   </footer>
+
+  <!-- Botones Flotantes -->
+  <button class="to-top" id="toTop" aria-label="Volver arriba" title="Volver arriba">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <a class="fab fab-wa" href="https://wa.me/573052547072?text=Hola%20Avila%20Mora%20Soluciones!%20Quiero%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="WhatsApp" title="Escríbenos por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <button class="fab fab-theme" id="themeToggle" type="button" aria-label="Cambiar tema" title="Cambiar tema">
+    <i class="fa-solid fa-circle-half-stroke"></i>
+  </button>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
