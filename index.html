@@ -28,44 +28,63 @@
   <!-- Enlace a tu archivo CSS -->
   <link rel="stylesheet" href="styles.css" />
   
-  <!-- CSS DE RESCATE (Menú y Tarjeta arreglados) -->
+  <!-- CSS DE RESCATE DEFINITIVO (Menú Responsivo y Tarjeta) -->
   <style>
     /* 1. Arreglo del Menú de Navegación */
     .nav-inner {
         display: flex !important;
-        flex-wrap: nowrap !important; 
+        flex-wrap: nowrap !important; /* Prohibido saltar de línea */
         justify-content: space-between !important; 
         align-items: center !important;
         width: 100% !important;
+        gap: 15px !important;
     }
+
+    /* Proteger el Logo para que no se rompa */
+    .brand-wrap {
+        white-space: nowrap !important;
+        min-width: max-content !important;
+    }
+
+    /* Contenedor de los links centrales */
     .nav-links {
         display: flex !important;
-        gap: 20px !important;
+        flex-wrap: nowrap !important; 
+        gap: 15px !important; /* Espacio reducido para que quepa mejor */
         margin: 0 auto !important; 
         padding: 0 !important;
         align-items: center !important;
     }
+
     .nav-links li {
         list-style: none !important;
+        white-space: nowrap !important; /* Evita cortes en las palabras */
     }
+
     .nav-links a {
         white-space: nowrap !important;
-        font-size: 0.95rem !important;
+        font-size: 0.9rem !important; /* Letra un toque más fina para optimizar espacio */
         text-decoration: none !important;
     }
+
+    /* Contenedor de Botones */
     .nav-cta {
         display: flex !important;
-        gap: 15px !important;
+        gap: 10px !important;
         align-items: center !important;
         white-space: nowrap !important; 
+        flex-shrink: 0 !important; /* Evita que los botones se aplasten o deformen */
     }
-    @media (max-width: 1024px) {
+
+    /* EL TRUCO: Ocultar el menú y pasar a modo móvil MUCHO ANTES de que se rompa */
+    @media (max-width: 1250px) {
         .nav-links, .nav-cta {
             display: none !important; 
         }
+        /* El botón de hamburguesa (.menu-btn) se mostrará automáticamente según tu CSS principal */
     }
 
-    /* 2. Arreglo de la Tarjeta de Beneficios */
+    /* 2. Arreglo de la Tarjeta de Beneficios (Se mantiene igual) */
     .hero-checklist {
         display: flex !important;
         flex-direction: column !important;
